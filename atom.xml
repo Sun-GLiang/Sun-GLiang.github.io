@@ -2,11 +2,11 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>ooopSok&#39;s Blog</title>
   
-  
+  <subtitle>Be Happy Every Day</subtitle>
   <link href="https://sun-gliang.github.io/atom.xml" rel="self"/>
   
   <link href="https://sun-gliang.github.io/"/>
-  <updated>2023-03-24T17:03:16.533Z</updated>
+  <updated>2023-03-24T18:11:49.170Z</updated>
   <id>https://sun-gliang.github.io/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Remind</title>
+    <link href="https://sun-gliang.github.io/post/9ebdcc7b.html"/>
+    <id>https://sun-gliang.github.io/post/9ebdcc7b.html</id>
+    <published>2023-03-24T18:08:42.000Z</published>
+    <updated>2023-03-24T18:11:49.170Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="总纲"><a href="#总纲" class="headerlink" title="总纲"></a>总纲</h2><p>之后继续完善网站的一些功能，如<strong>阅读全文、字数统计、网站访问数量、网站动态&#x2F;静态背景、404报错页面</strong></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;总纲&quot;&gt;&lt;a href=&quot;#总纲&quot; class=&quot;headerlink&quot; title=&quot;总纲&quot;&gt;&lt;/a&gt;总纲&lt;/h2&gt;&lt;p&gt;之后继续完善网站的一些功能，如&lt;strong&gt;阅读全文、字数统计、网站访问数量、网站动态&amp;#x2F;静态背景、404报错页面&lt;/strong</summary>
+      
+    
+    
+    
+    
+    <category term="MEMO" scheme="https://sun-gliang.github.io/tags/MEMO/"/>
+    
+  </entry>
   
   <entry>
     <title>AlgorithmNote</title>
