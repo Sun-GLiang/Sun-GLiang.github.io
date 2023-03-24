@@ -3,11 +3,11 @@
   <title>ooopSok&#39;s BLOG</title>
   
   
-  <link href="https://github.com/Sun-GLiang/atom.xml" rel="self"/>
+  <link href="https://sun-gliang.github.io/atom.xml" rel="self"/>
   
-  <link href="https://github.com/Sun-GLiang/"/>
-  <updated>2023-03-24T03:15:45.631Z</updated>
-  <id>https://github.com/Sun-GLiang/</id>
+  <link href="https://sun-gliang.github.io/"/>
+  <updated>2023-03-24T04:37:37.625Z</updated>
+  <id>https://sun-gliang.github.io/</id>
   
   <author>
     <name>ooopSok</name>
@@ -17,9 +17,31 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>try</title>
+    <link href="https://sun-gliang.github.io/2023/03/24/try/"/>
+    <id>https://sun-gliang.github.io/2023/03/24/try/</id>
+    <published>2023-03-24T04:26:50.000Z</published>
+    <updated>2023-03-24T04:37:37.625Z</updated>
+    
+    <content type="html"><![CDATA[<p>cqe</p><hr>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;cqe&lt;/p&gt;
+&lt;hr&gt;
+</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
     <title>First</title>
-    <link href="https://github.com/Sun-GLiang/2023/03/24/First/"/>
-    <id>https://github.com/Sun-GLiang/2023/03/24/First/</id>
+    <link href="https://sun-gliang.github.io/2023/03/24/First/"/>
+    <id>https://sun-gliang.github.io/2023/03/24/First/</id>
     <published>2023-03-24T02:20:50.000Z</published>
     <updated>2023-03-24T03:15:45.631Z</updated>
     
@@ -40,8 +62,8 @@
   
   <entry>
     <title>Hello World</title>
-    <link href="https://github.com/Sun-GLiang/2023/03/24/hello-world/"/>
-    <id>https://github.com/Sun-GLiang/2023/03/24/hello-world/</id>
+    <link href="https://sun-gliang.github.io/2023/03/24/hello-world/"/>
+    <id>https://sun-gliang.github.io/2023/03/24/hello-world/</id>
     <published>2023-03-24T02:07:55.570Z</published>
     <updated>2023-03-24T02:07:55.570Z</updated>
     
