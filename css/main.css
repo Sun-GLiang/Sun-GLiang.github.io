@@ -399,13 +399,50 @@ td {
   transition-delay: 0s;
   transition-duration: 0.2s;
   transition-timing-function: ease-in-out;
-  background-color: #eee;
-  background-image: linear-gradient(#fcfcfc, #eee);
-  border: 1px solid #d5d5d5;
-  border-radius: 3px;
-  font-size: 0.8125em;
-  right: 4px;
-  top: 8px;
+  color: #fff;
+  font-size: 14px;
+  right: 0;
+  top: 2px;
+}
+.highlight-wrap {
+  background: #21252b;
+  border-radius: 5px;
+  padding-top: 33px;
+  position: relative;
+  box-shadow: 18px 18px 15px 0px rgba(0,0,0,0.4);
+  margin: 35px 0;
+  margin-top: 10px;
+  margin-bottom: 28px;
+}
+.highlight-wrap ::-webkit-scrollbar {
+  height: 10px;
+}
+.highlight-wrap ::-webkit-scrollbar-track {
+/*滚动条框*/
+  -webkit-box-shadow: inset 0 0 10px rgba(255,255,255,0.3);
+  border-radius: 10px;
+}
+.highlight-wrap ::-webkit-scrollbar-thumb {
+/*滚动条里面小方块*/
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 10px rgba(150,150,150,0.5);
+}
+.highlight-wrap::before {
+  background: #fc625d;
+  border-radius: 50%;
+  box-shadow: 20px 0 #fdbc40, 40px 0 #35cd4b;
+  content: ' ';
+  height: 12px;
+  left: 16px;
+  margin-top: -22px;
+  position: absolute;
+  width: 12px;
+}
+.highlight {
+  border-radius: 5px;
+}
+.table-container {
+  border-bottom-left-radius: 5px;
 }
 .highlight,
 pre {
@@ -1199,7 +1236,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #4d5dff;
+  background: #a4f0ff;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -1497,6 +1534,16 @@ pre .javascript .function {
 }
 .back-to-top.back-to-top-on:hover {
   opacity: 0.8;
+}
+.reading-progress-bar {
+  background: #37c6c0;
+  display: block;
+  height: 3px;
+  left: 0;
+  position: fixed;
+  width: 0;
+  z-index: 1500;
+  top: 0;
 }
 .post-body {
   font-family: 'Noto Serif SC', "PingFang SC", "Microsoft YaHei", sans-serif;
@@ -2539,7 +2586,7 @@ ul.breadcrumb li + li:last-child {
   padding: initial;
 }
 .post-block {
-  background: var(--content-bg-color);
+  background: rgba(255,255,255,0.7);
   border-radius: initial;
   box-shadow: 0 2px 2px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.06), 0 1px 5px 0 rgba(0,0,0,0.12);
   padding: 40px;
@@ -2656,4 +2703,54 @@ ul.breadcrumb li + li:last-child {
   .pagination {
     margin: 8px 0 0;
   }
+}
+body {
+  background: url("../images/background.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: 50% 50%;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -o-background-size: cover;
+  -moz-background-size: cover;
+  -ms-background-size: cover;
+}
+table {
+  opacity: 0.9;
+}
+h1 {
+  font-size: 1.6em;
+}
+.btn {
+  background: #f4f4f4;
+  border: 1px solid #555;
+  border-radius: 6px;
+  color: #555;
+  font-size: 0.9em;
+  opacity: 0.8;
+}
+.sidebar {
+  background: rgba(255,255,255,0);
+}
+.links-of-author {
+  font-size: 0.7em;
+}
+.site-state {
+  font-size: 0.9em;
+}
+.sidebar-inner {
+  font-size: 1.38em;
+}
+.back-to-top.back-to-top-on {
+  opacity: 0.8;
+  border-radius: 15px;
+}
+.highlight-wrap {
+  opacity: 0.95;
+}
+.post-copyright {
+  opacity: 0.8;
+}
+.footer-inner {
+  font-size: 1.21em;
 }
