@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://sun-gliang.github.io/post/9ebdcc7b.html</loc>
+    <loc>https://sun-gliang.github.io/post/d92ce365.html</loc>
     
     <lastmod>2023-03-25</lastmod>
     
@@ -11,7 +11,16 @@
   </url>
   
   <url>
-    <loc>https://sun-gliang.github.io/post/d92ce365.html</loc>
+    <loc>https://sun-gliang.github.io/about/index.html</loc>
+    
+    <lastmod>2023-03-25</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://sun-gliang.github.io/post/9ebdcc7b.html</loc>
     
     <lastmod>2023-03-25</lastmod>
     
@@ -47,14 +56,14 @@
 
   
   <url>
-    <loc>https://sun-gliang.github.io/tags/MEMO/</loc>
+    <loc>https://sun-gliang.github.io/tags/algorithm/</loc>
     <lastmod>2023-03-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://sun-gliang.github.io/tags/algorithm/</loc>
+    <loc>https://sun-gliang.github.io/tags/MEMO/</loc>
     <lastmod>2023-03-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -63,14 +72,14 @@
 
   
   <url>
-    <loc>https://sun-gliang.github.io/categories/algorithm/</loc>
+    <loc>https://sun-gliang.github.io/categories/Algorithm/</loc>
     <lastmod>2023-03-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://sun-gliang.github.io/categories/algorithm/Learning/</loc>
+    <loc>https://sun-gliang.github.io/categories/Algorithm/Learning/</loc>
     <lastmod>2023-03-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
