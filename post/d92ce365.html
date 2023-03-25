@@ -12,12 +12,12 @@
 
 <link rel="stylesheet" href="/css/main.css">
 
-
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noto Serif SC:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
 <link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"sun-gliang.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
+    var CONFIG = {"hostname":"sun-gliang.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
   </script>
 
   <meta name="description" content="基础算法1.快速排序平均为nlogn ，最坏为n^2  分治思想 1.选择分界点x     x  &#x3D;  q[l]  &#x2F;  q[(l+r)&#x2F;2]  &#x2F;  q[r]  &#x2F;  随机 2.调整区间       重难点 3.递归处理左右两段 通过设置两个指针i，j分别指向初始序列的两端      i 和 j 相遇后只可能会出现  i &#x3D;&#x3D;">
@@ -30,7 +30,7 @@
 <meta property="og:image" content="https://sun-gliang.github.io/merge.png">
 <meta property="og:image" content="https://sun-gliang.github.io/bfs.png">
 <meta property="article:published_time" content="2023-03-24T16:25:41.000Z">
-<meta property="article:modified_time" content="2023-03-24T17:03:16.533Z">
+<meta property="article:modified_time" content="2023-03-25T03:54:27.393Z">
 <meta property="article:author" content="ooopSok">
 <meta property="article:tag" content="algorithm">
 <meta name="twitter:card" content="summary">
@@ -53,6 +53,15 @@
   
 
 
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?7afc37b9fc5e1f6dee6dce06c06eacde";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
 
 
 
@@ -199,7 +208,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2023-03-25 00:25:41 / Modified: 01:03:16" itemprop="dateCreated datePublished" datetime="2023-03-25T00:25:41+08:00">2023-03-25</time>
+              <time title="Created: 2023-03-25 00:25:41 / Modified: 11:54:27" itemprop="dateCreated datePublished" datetime="2023-03-25T00:25:41+08:00">2023-03-25</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
