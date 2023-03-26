@@ -11,6 +11,15 @@
   </url>
   
   <url>
+    <loc>https://sun-gliang.github.io/post/9ebdcc7b.html</loc>
+    
+    <lastmod>2023-03-26</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://sun-gliang.github.io/lib/pace/README.html</loc>
     
     <lastmod>2023-03-25</lastmod>
@@ -21,15 +30,6 @@
   
   <url>
     <loc>https://sun-gliang.github.io/about/index.html</loc>
-    
-    <lastmod>2023-03-25</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://sun-gliang.github.io/post/9ebdcc7b.html</loc>
     
     <lastmod>2023-03-25</lastmod>
     
@@ -65,14 +65,14 @@
 
   
   <url>
-    <loc>https://sun-gliang.github.io/tags/MEMO/</loc>
+    <loc>https://sun-gliang.github.io/tags/algorithm/</loc>
     <lastmod>2023-03-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://sun-gliang.github.io/tags/algorithm/</loc>
+    <loc>https://sun-gliang.github.io/tags/MEMO/</loc>
     <lastmod>2023-03-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
