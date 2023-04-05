@@ -30,7 +30,7 @@
 <meta property="og:image" content="https://sun-gliang.github.io/images/image-20211213234826044.png">
 <meta property="og:image" content="https://sun-gliang.github.io/bfs.png">
 <meta property="article:published_time" content="2023-03-24T16:25:41.000Z">
-<meta property="article:modified_time" content="2023-04-05T07:52:31.861Z">
+<meta property="article:modified_time" content="2023-04-05T08:42:39.514Z">
 <meta property="article:author" content="ooopSok">
 <meta property="article:tag" content="algorithm">
 <meta name="twitter:card" content="summary">
@@ -230,7 +230,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-04-05 15:52:31" itemprop="dateModified" datetime="2023-04-05T15:52:31+08:00">2023-04-05</time>
+                <time title="Modified: 2023-04-05 16:42:39" itemprop="dateModified" datetime="2023-04-05T16:42:39+08:00">2023-04-05</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -858,6 +858,7 @@
 <li>数据规模在100万以上，采用scanf和printf，否则cin和cout与他俩效率差不多</li>
 <li>bits&#x2F;stdc++.h  ——-     万能头文件</li>
 </ul>
+<p>$$<br>S_i<br>$$</p>
 <h1 id="STL"><a href="#STL" class="headerlink" title="STL"></a>STL</h1><ul>
 <li><p><code>vector</code>（变长数组），倍增的思想，支持比较运算（按字典序）<br>定义：：<br>    <code>vector &lt;int&gt; a</code>; 定义：一个vector数组a<br>    <code>vector &lt;int&gt; a(10)</code>; 定义：一个长度为10的vector数组a<br>    <code>vector &lt;int&gt; a(10,3)</code>; 定义：一个长度为10的vector数组a，并且所有元素都为3<br><strong>常用函数</strong>：：<br>    size(); 返回元素个数  O(1)<br>    empty(); 返回是否是空  O(1)<br>    clear(); 清空<br>    front(); 返回vector的第一个数<br>    back(); 返回vector的最后一个数<br>    push_back(); 向vector的最后插入一个数<br>    pop_back(); 把vector的最后一个数删掉<br>    begin(); vector的第0个数<br>    end(); vector的最后一个的数的后面一个数<br><strong>倍增的思想</strong>：<br>​			操作系统为某一进程分配空间时所花费的时间与空间大小无关，而与申请的次数有关。</p>
 <p>​			************************************</p>
@@ -1197,6 +1198,61 @@ window.addEventListener('pjax:success', () => {
 
     <div id="pjax">
   
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
 
   
 
