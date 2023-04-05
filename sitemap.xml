@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://sun-gliang.github.io/404.html</loc>
+    
+    <lastmod>2023-04-05</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://sun-gliang.github.io/post/d92ce365.html</loc>
     
     <lastmod>2023-04-05</lastmod>
@@ -11,7 +20,16 @@
   </url>
   
   <url>
-    <loc>https://sun-gliang.github.io/post/undefined.html</loc>
+    <loc>https://sun-gliang.github.io/post/linuxNote.html</loc>
+    
+    <lastmod>2023-04-05</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://sun-gliang.github.io/post/9ebdcc7b.html</loc>
     
     <lastmod>2023-04-05</lastmod>
     
@@ -21,15 +39,6 @@
   
   <url>
     <loc>https://sun-gliang.github.io/about/index.html</loc>
-    
-    <lastmod>2023-04-04</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://sun-gliang.github.io/post/9ebdcc7b.html</loc>
     
     <lastmod>2023-04-04</lastmod>
     

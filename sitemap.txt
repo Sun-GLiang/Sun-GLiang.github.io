@@ -1,7 +1,8 @@
+https://sun-gliang.github.io/404.html
 https://sun-gliang.github.io/post/d92ce365.html
-https://sun-gliang.github.io/post/undefined.html
-https://sun-gliang.github.io/about/index.html
+https://sun-gliang.github.io/post/linuxNote.html
 https://sun-gliang.github.io/post/9ebdcc7b.html
+https://sun-gliang.github.io/about/index.html
 https://sun-gliang.github.io/lib/pace/README.html
 https://sun-gliang.github.io/categories/index.html
 https://sun-gliang.github.io/tags/index.html
