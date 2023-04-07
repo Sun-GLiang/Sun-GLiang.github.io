@@ -30,7 +30,7 @@
 <meta property="og:image" content="https://sun-gliang.github.io/images/image-20211213234826044.png">
 <meta property="og:image" content="https://sun-gliang.github.io/bfs.png">
 <meta property="article:published_time" content="2023-03-24T16:25:41.000Z">
-<meta property="article:modified_time" content="2023-04-07T08:49:03.315Z">
+<meta property="article:modified_time" content="2023-04-07T16:09:41.377Z">
 <meta property="article:author" content="ooopSok">
 <meta property="article:tag" content="algorithm">
 <meta name="twitter:card" content="summary">
@@ -230,7 +230,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-04-07 16:49:03" itemprop="dateModified" datetime="2023-04-07T16:49:03+08:00">2023-04-07</time>
+                <time title="修改时间：2023-04-08 00:09:41" itemprop="dateModified" datetime="2023-04-08T00:09:41+08:00">2023-04-08</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -256,14 +256,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>25k</span>
+              <span>26k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>23 分钟</span>
+              <span>24 分钟</span>
             </span>
 
         </div>
@@ -490,12 +490,22 @@
 <li><p><strong><code>KMP</code>匹配过程</strong><br>在对目标串<code>S</code>进行匹配时，假设匹配到<code>S</code>串的第<code>i - 1</code>个位置与<code>P</code>串的第<code>j</code>个位置之前都是相等的；但是当匹配到<code>S</code>串的第<code>i</code>个位置与<code>P</code>串的第<code>j + 1</code>个位置时，有<code>S[i] != P[j + 1]</code>而且此时模板串的指针还没有回退到模板串的起始位置，则此时调用<code>next</code>数组，将模板串<code>P</code>向前移动<code>next[j]</code>再继续看<code>S</code>串的第<code>i</code>个位置与<code>P</code>串的第<code>next[j] + 1</code>个位置是否相等，若不等且此时模板串的指针还没有回退到模板串的起始位置则继续移动<code>next[next[j]]</code>，否则如果相等，则指针向前移动，直至结束匹配；匹配结束时，仍要令模板串向前移动<code>next[指针位置]</code>（因为匹配成功后，目标串可能还有剩余的元素未进行匹配，进行<code>next</code>操作以进行后续的下一次匹配</p>
 </li>
 </ul>
+<p><strong>代码参考</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 求next数组</span></span><br><span class="line"><span class="comment">// 由于next[1] = 0，故从i = 2开始</span></span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">2</span>, j = <span class="number">0</span>; i &lt;= n; i++)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">while</span> (j &amp;&amp; p[i] != p[j + <span class="number">1</span>]) j = ne[j];</span><br><span class="line">    <span class="keyword">if</span> (p[i] == p[j + <span class="number">1</span>]) j++;</span><br><span class="line">    ne[i] = j;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// KMP匹配过程</span></span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>, j = <span class="number">0</span>; i &lt;= m; i++)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">while</span> (j &amp;&amp; s[i] != p[j + <span class="number">1</span>]) j = ne[j];</span><br><span class="line">    <span class="keyword">if</span> (s[i] == p[j + <span class="number">1</span>]) j++;</span><br><span class="line">    <span class="keyword">if</span> (j == n)</span><br><span class="line">    &#123;</span><br><span class="line">        cout &lt;&lt; i - n &lt;&lt; <span class="string">&#x27; &#x27;</span>;</span><br><span class="line">        j = ne[j];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>可以用来求循环节，其他体型好像都不如字符串前缀哈希了</p>
 <h2 id="5-Trie"><a href="#5-Trie" class="headerlink" title="5. Trie"></a>5. Trie</h2><p>应用：AC自动机</p>
 <p><u><strong>一般出现的字符串类型：全是小写字母、全是大写字母、只有数字、只有0&#x2F;1</strong></u></p>
-<p><u>用来快速（高效）<strong>存储和查找字符串集合</strong>的数据结构</u></p>
+<p><u>用来快速（高效）<strong>存储</strong>和<strong>查找</strong>字符串集合的数据结构</u></p>
+<p><strong>Trie树的存储</strong><br>构造过程可以想想FP_tree的构造过程（<del>关联规则的一种方法，如果还可以想起来的话</del>；Trie树会在每个字符串的结尾处做一个标记，表示这个字符串的结束</p>
+<p><strong>代码参考</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// son[N][26]表示存储的是`Trie`树中每个节点的所有儿子；cnt[N]表示以当前节点结尾的元素有多少个；idx表示当前用到了哪个下标（下标为0的点，既是根节点也是空结点） </span></span><br><span class="line"><span class="comment">// 插入节点，建立Trie树</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">insert</span><span class="params">(string str)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> p = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; str[i]; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">int</span> t = str[i] - <span class="string">&#x27;a&#x27;</span>;</span><br><span class="line">        <span class="keyword">if</span> (!son[p][t]) son[p][t] = ++idx;</span><br><span class="line">        p = son[p][t];</span><br><span class="line">    &#125;</span><br><span class="line">    cnt[p]++;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 查询</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">query</span><span class="params">(string str)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> p = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; str[i]; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">int</span> t = str[i] - <span class="string">&#x27;a&#x27;</span>;</span><br><span class="line">        <span class="keyword">if</span> (!son[p][t]) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        p = son[p][t];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> cnt[p];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
 <h2 id="6-并查集"><a href="#6-并查集" class="headerlink" title="6. 并查集"></a>6. 并查集</h2><p><strong><del>面试笔试    思维</del></strong></p>
-<p>应用之一：Kruskal</p>
+<ul>
+<li>应用之一：Kruskal</li>
+</ul>
 <p><strong>用途：</strong></p>
 <ol>
 <li>将两个集合合并</li>
@@ -515,15 +525,23 @@
 <p><u><strong>核心操作</strong></u></p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 寻找x结点的祖宗节点 + 路径优化</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">find</span><span class="params">(<span class="type">int</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (p[x] != x) p[x] = <span class="built_in">find</span>(p[x]);</span><br><span class="line">	<span class="keyword">return</span> p[x];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p><strong>食物链</strong><br>不论两个动物之间是不是同一种生物、是不是被吃的关系，都将它们放到一个集合中，即一个树中</p>
-<p>那么如何确定其中两个动物之间的关系呢？记录一下每个点与根节点之间的关系；只要我们知道了每个点与根节点的关系了，就可以知道每两个点之间的关系了</p>
-<p>利用每个点与根节点之间的距离表示其与根节点之间的关系</p>
-<ul>
-<li>距离 % 3 &#x3D; 1 表示可以吃根节点</li>
-<li>距离 % 3 &#x3D; 2 表示可以被根节点吃</li>
-<li>距离 % 3 &#x3D; 0 表示与根节点同类</li>
-</ul>
-<p>在这道题中，利用并查集维护每个点到根节点的距离  </p>
+<!-- **食物链**
+不论两个动物之间是不是同一种生物、是不是被吃的关系，都将它们放到一个集合中，即一个树中
+
+那么如何确定其中两个动物之间的关系呢？记录一下每个点与根节点之间的关系；只要我们知道了每个点与根节点的关系了，就可以知道每两个点之间的关系了
+
+利用每个点与根节点之间的距离表示其与根节点之间的关系
+
+- 距离 % 3 = 1 表示可以吃根节点
+- 距离 % 3 = 2 表示可以被根节点吃
+- 距离 % 3 = 0 表示与根节点同类
+
+在这道题中，利用并查集维护每个点到根节点的距离   -->
+
+
+
+
+
 <h2 id="7-堆"><a href="#7-堆" class="headerlink" title="7. 堆"></a>7. 堆</h2><p><u>维护一个数据集合</u></p>
 <ul>
 <li>基本操作</li>
@@ -822,18 +840,22 @@
 <p><strong>欧拉定理</strong><br>$$<br>若a与n互质，则a^{\varphi(n)}\equiv1(mod \ \ n)，其中\varphi(n)为欧拉函数<br>$$</p>
 <p>$$<br>Proof:\<br>假设1-n中与n互质的数分别为a_1,a_2,…,a_{\varphi(n)}(因为欧拉函数为\varphi(n)),则又由于a与n互质，可知有aa_1,aa_2,…,aa_{\varphi(n)}也与n互质，\且互不相同（反证法）,而且aa_1,aa_2,…,aa_{\varphi(n)}在模n的情况下是与a_1,a_2,…,a_{\varphi(n)}为同一组数。因此有\a^{\varphi(n)}a_1a_2…a_{\varphi(n)}\equiv a_1a_2…a_{\varphi(n)}(mod \ n)—-&gt;a^{\varphi(n)}\equiv 1(mod \ n)<br>$$</p>
 <p><strong>费马小定理</strong><br>$$<br>在欧拉定理中，当n为质数时，有a^{n-1}\equiv 1(mod \ n)\<br>因为\varphi(n)&#x3D;n-1<br>$$</p>
-<h3 id="1-5-快速幂"><a href="#1-5-快速幂" class="headerlink" title="1.5. 快速幂"></a>1.5. 快速幂</h3><p>$$<br>a^k\ mod\ \ p\<br>可以在O(logk)的时间复杂度下求得上面的结果，其中0\le a,k,p\le10^9<br>$$</p>
-<p>快速幂的核心思路：反复平方法</p>
-<p>预处理出来<br>$$<br>二进制思想\预处理出来\<br>a^{2^0}mod\ p\<br>a^{2^1}mod\ p\<br>…\<br>a^{2^{log_2k}}mod\ p\<br>则a^k可以有上面预处理出来的基来表示\<br>而且上面的基有关系为(a^{2^0})^2&#x3D;a^{2^1},(a^{2^1})^2&#x3D;a^{2^2}…<br>$$</p>
+<h3 id="1-5-快速幂"><a href="#1-5-快速幂" class="headerlink" title="1.5. 快速幂"></a>1.5. 快速幂</h3><ul>
+<li>快速幂的<strong>核心思路</strong>：反复平方法</li>
+<li>能够快速地求出$a^k\ mod\ p$</li>
+<li>可以在$O(logk)$的时间复杂度下求得上面的结果，其中$0\le a,\ k,\ p\le10^9$</li>
+</ul>
+<p><strong>二进制思想</strong><br>预处理出来$logk$个基值 $a^{2^0}mod\ p，a^{2^1}mod\ p，…，a^{2^{log{k}}}mod\ p$</p>
+<p>$a^k$可以由上面预处理出来的基来表示（即将<code>k</code>转换为二进制表示），而且上面的基有关系为$(a^{2^0})^2&#x3D;a^{2^1},(a^{2^1})^2&#x3D;a^{2^2}…$，即当前的数&#x3D;上一个数的平方再模<code>p</code></p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">qmi</span><span class="params">(<span class="type">int</span> a, <span class="type">int</span> k, <span class="type">int</span> p)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> res = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (k)</span><br><span class="line">    &#123;</span><br><span class="line">    	<span class="keyword">if</span> (k &amp; <span class="number">1</span>) res = (<span class="type">long</span> <span class="type">long</span>)res * a % p;</span><br><span class="line">        k &gt;&gt;= <span class="number">1</span>;</span><br><span class="line">        a = (<span class="type">long</span> <span class="type">long</span>)a * a % p;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
 
-
-
 <p><strong>利用快速幂求逆元</strong></p>
-<p>$$<br>乘法逆元的定义：若整数b，m互质，并且对于任意的整数a，如果满足b|a，则存在一个整数x，使得\frac{a}{b}≡a×x(mod \ m)，则称x为b的模m乘法逆元，记为 b^{−1}(mod\ m)。\<br>b存在乘法逆元的充要条件是b与模数m互质。\<br>当模数m为质数时，b^{m−2}即为b的乘法逆元。（参见费马小定理）<br>$$</p>
-<p>$$<br>当x为b的乘法逆元时，有x&#x3D;b^{-1}(mod \ m)。带入乘法逆元定义式，有\frac{a}{b}\equiv a×b^{-1}(mod\ m)，化简得bb^{-1}\equiv 1(mod\ m)\<br>由于m为质数，由费马小定理可知，b^{m-1}\equiv1(mod\ m)，联立有b^{-1}(mod\ m)&#x3D;b^{m-2}<br>$$</p>
+<p><strong>乘法逆元</strong>的定义：若整数$b$，$m$互质，并且对于任意的整数$a$，如果满足$b|a$，则存在一个整数$x$，使得$\frac{a}{b}≡a×x(mod \ m)$，则称$x$为$b$的模$m$乘法逆元，记为$b^{−1}(mod\ m)$。</p>
+<p>b存在乘法逆元的充要条件是$b$与模数$m$互质。</p>
+<p>当模数$m$为质数时，$b^{m−2}$即为$b$的乘法逆元。（参见费马小定理）</p>
+<p>当$x$为$b$的乘法逆元时，有$x&#x3D;b^{-1}(mod \ m)$。带入乘法逆元定义式，有$\frac{a}{b}\equiv a×b^{-1}(mod\ m)$，化简得$bb^{-1}\equiv 1(mod\ m)$<br>由于$m$为质数，由费马小定理可知，$b^{m-1}\equiv1(mod\ m)$，联立有$b^{-1}(mod\ m)&#x3D;b^{m-2}$</p>
 <h3 id="1-6-扩展欧几里得算法"><a href="#1-6-扩展欧几里得算法" class="headerlink" title="1.6. 扩展欧几里得算法"></a>1.6. 扩展欧几里得算法</h3><p><strong>裴蜀定理</strong><br>$$<br>对于任意的正整数a，b，一定存在非零整数x，y，使得ax+by&#x3D;gcd(a, b)<br>$$<br>利用扩展欧几里得算法可以求得一组x,y使得x,y满足ax+by&#x3D;gcd(a,b)</p>
 <p><strong>线性同余方程</strong></p>
 <h3 id="1-7-中国剩余定理"><a href="#1-7-中国剩余定理" class="headerlink" title="1.7. 中国剩余定理"></a>1.7. 中国剩余定理</h3><p>$$<br>有m_1,m_2,…m_k两两互质，则对于如下的线性同余方程组\<br>\begin{cases}<br>x &#x3D; a_1(mod \ m_1) \<br>x &#x3D; a_2(mod \ m_2) \<br>…\<br>x &#x3D; a_k(mod \ m_k)<br>\end{cases}\<br>有解为x&#x3D;a_1M_1M_1^{-1}+a_2M_2M_2^{-1}+…+a_kM_kM_k^{-1}\<br>其中M&#x3D;m_1m_2…m_k,M_i&#x3D;\frac{M}{m_{i}},M_i^{-1}表示M_i模m_i的逆<br>$$</p>
@@ -1072,7 +1094,7 @@
       <!--以下为新增内容-->
       <div>
         
-          <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=210 height=88" src="//music.163.com/outchain/player?type=0&id=8258840252&auto=1&height=66"></iframe>
+          <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=210 height=88 src="//music.163.com/outchain/player?type=0&id=8258840252&auto=1&height=66"></iframe>
         
       </div>
         <div class="back-to-top motion-element">
@@ -1106,7 +1128,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">28k</span>
+    <span title="站点总字数">29k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
