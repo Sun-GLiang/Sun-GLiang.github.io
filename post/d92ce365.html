@@ -30,7 +30,7 @@
 <meta property="og:image" content="https://sun-gliang.github.io/images/image-20211213234826044.png">
 <meta property="og:image" content="https://sun-gliang.github.io/bfs.png">
 <meta property="article:published_time" content="2023-03-24T16:25:41.000Z">
-<meta property="article:modified_time" content="2023-04-05T09:41:27.344Z">
+<meta property="article:modified_time" content="2023-04-07T08:49:03.315Z">
 <meta property="article:author" content="ooopSok">
 <meta property="article:tag" content="algorithm">
 <meta name="twitter:card" content="summary">
@@ -230,7 +230,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-04-05 17:41:27" itemprop="dateModified" datetime="2023-04-05T17:41:27+08:00">2023-04-05</time>
+                <time title="修改时间：2023-04-07 16:49:03" itemprop="dateModified" datetime="2023-04-07T16:49:03+08:00">2023-04-07</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -256,14 +256,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>23k</span>
+              <span>25k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>21 分钟</span>
+              <span>23 分钟</span>
             </span>
 
         </div>
@@ -330,6 +330,9 @@
 <li>二分一定是有解的；无解情况取决于题目性质</li>
 <li>每次二分之后保证答案在所选区间内部</li>
 </ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 找到第一个大于等于 x 的位置</span></span><br><span class="line"><span class="comment">// 可以这么思考：数轴上有若干个连续分布着的 x ，且mid左右两边都有x存在，则q[mid] &gt;= x的判定条件即可将区间划分为[l, mid]，逐次进行即可找到第一个x；反之，q[mid] &lt;= x的判定条件即可将区间划分为[mid, r]</span></span><br><span class="line"><span class="keyword">while</span> (l &lt; r)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">int</span> mid = (l + r) &gt;&gt; <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">if</span> (q[mid] &gt;= x) r = mid;</span><br><span class="line">    <span class="keyword">else</span> l = mid + <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
 <h3 id="4-2-浮点数二分"><a href="#4-2-浮点数二分" class="headerlink" title="4.2 浮点数二分"></a>4.2 浮点数二分</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">dou_bsearch_1</span><span class="params">(<span class="type">int</span> l, <span class="type">int</span> r)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">while</span>(l - r &gt; <span class="number">1e-8</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">double</span> mid = l + r &gt;&gt; <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span> (<span class="built_in">check</span>(mid)) r = mid;</span><br><span class="line">        <span class="keyword">else</span> l = mid;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> l;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">dou_bsearch</span><span class="params">(<span class="type">int</span> l, <span class="type">int</span> r)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">while</span>(l - r &gt; <span class="number">1e-8</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">double</span> mid = l + r &gt;&gt; <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span> (<span class="built_in">check</span>(mid)) l = mid;</span><br><span class="line">        <span class="keyword">else</span> r = mid;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> l;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <ul>
@@ -382,7 +385,7 @@
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">核心操作：将a[L, R]区间所有数字加上C， 等价于 b[L] += C, b[R + <span class="number">1</span>] -= C</span><br></pre></td></tr></table></figure>
 
 <p><strong>构造b数组</strong>—即假设a数组全为0， 则b数组也全为0，但实际上，a数组不全为0。这里需要构造一个插入函数，</p>
-<h3 id="7-2-二维差分"><a href="#7-2-二维差分" class="headerlink" title="7.2 二维差分"></a>7.2 二维差分</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 给以(x1, y1)为左上角，(x2, y2)为右下角的子矩阵中的所有元素加上c：</span></span><br><span class="line"><span class="comment">// S[x1, y1] += c, S[x2 + 1, y1] -= c, S[x1, y2 + 1] -= c, S[x2 + 1, y2 + 1] += c</span></span><br></pre></td></tr></table></figure>
+<h3 id="7-2-二维差分"><a href="#7-2-二维差分" class="headerlink" title="7.2 二维差分"></a>7.2 二维差分</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">给以(x1, y1)为左上角，(x2, y2)为右下角的子矩阵中的所有元素加上c：</span><br><span class="line">S[x1, y1] += c, S[x2 + <span class="number">1</span>, y1] -= c, S[x1, y2 + <span class="number">1</span>] -= c, S[x2 + <span class="number">1</span>, y2 + <span class="number">1</span>] += c</span><br></pre></td></tr></table></figure>
 
 
 
@@ -391,8 +394,9 @@
 <h2 id="8-双指针算法"><a href="#8-双指针算法" class="headerlink" title="8. 双指针算法"></a>8. 双指针算法</h2><p><font color=#dd0000><strong>优化</strong></font></p>
 <ul>
 <li><strong>单调</strong> 考虑二分或双指针</li>
+<li>先写出暴力解法，再看枚举时i j 的单调关系</li>
 </ul>
-<p><strong>核心思想</strong>：将双重for循环的O(n^2)的暴力法优化到O(n)<br>；先写出暴力解法，再看枚举时i j 的单调关系</p>
+<p><strong>核心思想</strong>：将双重for循环的O(n^2)的暴力法优化到O(n)</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; n; i++)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">int</span> j = i;</span><br><span class="line">    <span class="keyword">while</span> (j &lt; i &amp;&amp; <span class="built_in">check</span>()) j++;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// check()寻找i j 之间的关系（比如单调性）</span></span><br><span class="line">    <span class="comment">// 以上是基本模板格式，下面具体问题具体分析</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
@@ -400,22 +404,48 @@
 <h2 id="9-位运算"><a href="#9-位运算" class="headerlink" title="9.位运算"></a>9.位运算</h2><h3 id="9-1-n的二进制表示中第k位是几（个位是第0位，依次）"><a href="#9-1-n的二进制表示中第k位是几（个位是第0位，依次）" class="headerlink" title="9.1 n的二进制表示中第k位是几（个位是第0位，依次）"></a>9.1 n的二进制表示中第k位是几（个位是第0位，依次）</h3><ol>
 <li>​先把n的第k位移到第0位   n &gt;&gt; k</li>
 <li>​再看个位数是几   (n &gt;&gt; k) &amp; 1</li>
-<li>​综述———–&gt;(n &gt;&gt; k) &amp; 1</li>
+<li>​综述        (n &gt;&gt; k) &amp; 1</li>
 </ol>
 <h3 id="9-2-lobit-x"><a href="#9-2-lobit-x" class="headerlink" title="9.2 lobit(x)"></a>9.2 lobit(x)</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">return</span> x&amp;-x; <span class="comment">// 与运算，将x变为二进制进行与运算  </span></span><br></pre></td></tr></table></figure>
 
 <ul>
-<li>​返回x的二进制的最右边的一个1</li>
+<li>​返回x的二进制的最右边的一个1 <blockquote>
+<p>例如：lowbit(100100) &#x3D;&gt; 100</p>
+</blockquote>
+</li>
 </ul>
 <h2 id="10-离散化"><a href="#10-离散化" class="headerlink" title="10. 离散化"></a>10. 离散化</h2><p>类似于在一个很大的给定区间范围上，但是可以用到的区域占比很小（类比稀疏矩阵）</p>
-<p>通过将所需要用到的数据点坐标映射为1， 2， 3， … 这样的序列（二分实现），来达到离散化算法的功效。</p>
+<p>通过将所需要用到的数据点坐标映射为1， 2， 3， … 这样的有序（因为提前将数据进行了排序去重）序列（二分实现），来达到离散化算法的功效。</p>
+<p>在大数轴上有很多数据，但是仅仅只用到了很少的一部分，我们只需要将用到过的数据，比如将数据值<code>x</code>的坐标映射到1，2，3…这个小数轴上面的坐标值即可。如果需要计算大数轴上面<code>L~R</code>之间的数据和，只需要将<code>L</code>与<code>R</code>分别映射到小数轴上面的<code>l</code>与<code>r</code>，再在小数轴上面求前缀和即可。最终避免了开很大的数组造成的空间浪费。</p>
 <ul>
 <li>必须加入下面这两行代码（先排序，再去重）</li>
 </ul>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sort</span>(alls.<span class="built_in">begin</span>(), alls.<span class="built_in">end</span>())</span><br><span class="line">alls.<span class="built_in">erase</span>(<span class="built_in">unique</span>(alls.<span class="built_in">begin</span>(), alls.<span class="built_in">end</span>()), alls.<span class="built_in">end</span>())</span><br></pre></td></tr></table></figure>
 
+<p><strong>Java&#x2F;Python</strong>实现unique()函数</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 双指针算法</span></span><br><span class="line"><span class="comment">// 满足性质：第一个数 或者 当前这个数与前一个数不同 说明这个数是第一次出现</span></span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>, j = <span class="number">0</span>; i &lt; n; i++)</span><br><span class="line">    <span class="keyword">if</span> (!i || a[i] != a[i - <span class="number">1</span>])</span><br><span class="line">        a[j++] = a[i];</span><br><span class="line"></span><br><span class="line"><span class="comment">// a[0]~a[j - 1]即为a[n]中所有不重复元素 </span></span><br></pre></td></tr></table></figure>
+
 
 <h2 id="11-区间合并"><a href="#11-区间合并" class="headerlink" title="11.区间合并"></a>11.区间合并</h2><p><font color=#dd0000><strong>贪心思想</strong></font></p>
+<blockquote>
+<p>跟区间有关的题目，大部分都是贪心；可以对区间左端点 || 右端点 || 左右端点双关键字排序 </p>
+</blockquote>
+<p>将有交集的区间合并为一个区间（取并集） </p>
+<ol>
+<li>按区间左端点进行排序</li>
+<li>对于当前所维护的区间<code>I</code>而言，其下一个区间<code>J</code>与当前的区间<code>I</code>仅可能存在3种位置关系<ol>
+<li><code>J</code>完全包含于<code>I</code>区间中；此时答案为<code>I</code></li>
+<li><code>J</code>与<code>I</code>有部分交集；此时两个区间取并集</li>
+<li><code>J</code>与<code>I</code>没有交集；此时即可将<code>I</code>区间存放如答案中，以<code>J</code>区间作为下一个维护的区间进行讨论</li>
+</ol>
+</li>
+</ol>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">merge</span><span class="params">(vector&lt;PII&gt; &amp;segs)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    vector&lt;PII&gt; res;</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">sort</span>(segs.<span class="built_in">begin</span>(), segs.<span class="built_in">end</span>());</span><br><span class="line">    </span><br><span class="line">    <span class="type">int</span> st = <span class="number">-2e9</span>, ed = <span class="number">-2e9</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">auto</span> seg : segs)</span><br><span class="line">        <span class="keyword">if</span> (ed &lt; seg.first)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (st != <span class="number">-2e9</span>) res.<span class="built_in">push_back</span>(&#123;st, ed&#125;);</span><br><span class="line">            st = seg.first, ed = seg.second;</span><br><span class="line">        &#125; </span><br><span class="line">        <span class="keyword">else</span> ed = <span class="built_in">max</span>(ed, seg.second);</span><br><span class="line">    <span class="keyword">if</span> (st != <span class="number">-2e9</span>) res.<span class="built_in">push_back</span>(&#123;st, ed&#125;);</span><br><span class="line">    </span><br><span class="line">    segs = res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
 <h1 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h1><ul>
 <li><u><del>都是用来做优化的</del></u></li>
 </ul>
@@ -440,40 +470,60 @@
 <p>与双指针思路类似，先暴力求解，再探究规律</p>
 <h2 id="3-队列"><a href="#3-队列" class="headerlink" title="3. 队列"></a>3. 队列</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">const</span> <span class="type">int</span> N = <span class="number">100010</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 在队尾插入元素，在队头弹出元素</span></span><br><span class="line"><span class="type">int</span> q[N], hh, tt = <span class="number">-1</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 插入</span></span><br><span class="line">q[++tt] = x;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 弹出</span></span><br><span class="line">hh++;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 判断队列是否为空</span></span><br><span class="line"><span class="keyword">if</span> (hh &lt;= tt) <span class="keyword">not</span> empty</span><br><span class="line"><span class="keyword">else</span> empty</span><br><span class="line"></span><br><span class="line"><span class="comment">// 取出队头元素</span></span><br><span class="line">q[hh]</span><br></pre></td></tr></table></figure>
 
+<h3 id="单调队列"><a href="#单调队列" class="headerlink" title="单调队列"></a>单调队列</h3><p>典型应用：<strong>滑动窗口</strong> 求滑动窗口里面的最大值或最小值</p>
+<p>与双指针思路类似，先暴力求解，再探究规律，删去没有用的元素，就得到单调性了，利用单调性求极值</p>
+<ul>
+<li>比如要<strong>寻找一个滑动块内的最小值</strong> 利用队列来维护滑动块内的信息<blockquote>
+<p> 假设有队列<code>q</code>（数组存储的是下标），队头<code>hh</code>，队尾<code>tt</code>，滑动块长度为<code>k</code>，队头处存储的永远是滑动块内的最小值的下标</p>
+<p>假设滑动块移动到了某一区域，此时在滑动区间内有最小值<code>x</code>，坐标为<code>q[hh]</code>；随着滑动块的移动，只要这个<code>x</code>还未移出滑动块内（<code>i - k + 1 &lt;= q[hh]</code>），那么滑动块内的最小值就仍是<code>x</code>，保持不变；如果随着滑动块的移动，此时从队尾入队的元素<code>y</code>，有<code>y &lt;= 队头元素所存储的最小值，即x</code>，则<code>x</code>出队<code>y</code>入队，<code>y</code>的坐标就变为了<code>q[hh]</code>。循环往复…</p>
+</blockquote>
+</li>
+</ul>
+<p><strong>代码参考</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> hh = <span class="number">0</span>, tt = <span class="number">-1</span>;</span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; n; i++) </span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span> (hh &lt;= tt &amp;&amp; q[hh] &lt; i - k + <span class="number">1</span>) hh++;</span><br><span class="line">    <span class="keyword">while</span> (hh &lt;= tt &amp;&amp; a[q[tt]] &gt;= a[i]) tt--;</span><br><span class="line">    q[++tt] = i;</span><br><span class="line">    <span class="keyword">if</span> (i - k + <span class="number">1</span> &gt;= <span class="number">0</span>) cout &lt;&lt; a[q[hh]] &lt;&lt; <span class="string">&#x27; &#x27;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
-<h3 id="单调队列"><a href="#单调队列" class="headerlink" title="单调队列"></a>单调队列</h3><p>典型应用：滑动窗口</p>
-<p>与双指针思路类似，先暴力求解，再探究规律，删去没有用的元素</p>
-<h2 id="4-KMP"><a href="#4-KMP" class="headerlink" title="4. KMP"></a>4. KMP</h2><p>可以用来求循环节，其他体型好像都不如字符串前缀哈希了</p>
+<h2 id="4-KMP"><a href="#4-KMP" class="headerlink" title="4. KMP"></a>4. KMP</h2><p>$O(n)$</p>
+<ul>
+<li><p><strong><code>next</code>数组</strong><br><code>next[i] = j</code>的含义：模板串<code>P</code>中以<code>i</code>为终点的后缀子串和以<code>1</code>开始的前缀子串长度相等，均为<code>j</code>，且有子串的长度最长；即<code>P[1 ~ j] = P[i - j + 1 ~ i]</code></p>
+</li>
+<li><p><strong><code>KMP</code>匹配过程</strong><br>在对目标串<code>S</code>进行匹配时，假设匹配到<code>S</code>串的第<code>i - 1</code>个位置与<code>P</code>串的第<code>j</code>个位置之前都是相等的；但是当匹配到<code>S</code>串的第<code>i</code>个位置与<code>P</code>串的第<code>j + 1</code>个位置时，有<code>S[i] != P[j + 1]</code>而且此时模板串的指针还没有回退到模板串的起始位置，则此时调用<code>next</code>数组，将模板串<code>P</code>向前移动<code>next[j]</code>再继续看<code>S</code>串的第<code>i</code>个位置与<code>P</code>串的第<code>next[j] + 1</code>个位置是否相等，若不等且此时模板串的指针还没有回退到模板串的起始位置则继续移动<code>next[next[j]]</code>，否则如果相等，则指针向前移动，直至结束匹配；匹配结束时，仍要令模板串向前移动<code>next[指针位置]</code>（因为匹配成功后，目标串可能还有剩余的元素未进行匹配，进行<code>next</code>操作以进行后续的下一次匹配</p>
+</li>
+</ul>
+<p>可以用来求循环节，其他体型好像都不如字符串前缀哈希了</p>
 <h2 id="5-Trie"><a href="#5-Trie" class="headerlink" title="5. Trie"></a>5. Trie</h2><p>应用：AC自动机</p>
 <p><u><strong>一般出现的字符串类型：全是小写字母、全是大写字母、只有数字、只有0&#x2F;1</strong></u></p>
 <p><u>用来快速（高效）<strong>存储和查找字符串集合</strong>的数据结构</u></p>
 <h2 id="6-并查集"><a href="#6-并查集" class="headerlink" title="6. 并查集"></a>6. 并查集</h2><p><strong><del>面试笔试    思维</del></strong></p>
 <p>应用之一：Kruskal</p>
+<p><strong>用途：</strong></p>
+<ol>
+<li>将两个集合合并</li>
+<li>询问两个元素是否在一个集合中</li>
+</ol>
+<p>近乎$O(1)$的时间复杂度，快速地支持上面的两个操作</p>
+<p><strong>基本原理</strong>：每个集合用一棵<strong>树</strong>来表示。树根的编号就是整个集合的编号。每个节点存储它的父节点，即p[x]表示x的父节点。</p>
+<p><strong>问题</strong></p>
+<ol>
+<li>判断树根： <code>if（p[x] == x）</code></li>
+<li>求x的集合编号：<code>while（p[x] != x） x = p[x];</code>；此时该操作的复杂度还是很高，可以看出，与树高成正比<blockquote>
+<p><strong>优化</strong>：<strong>路径压缩</strong>：节点x沿着它的父亲节点一路找，一旦找到根节点，就将节点x寻找根节点路径上的所有节点都指向根节点</p>
+</blockquote>
+</li>
+<li>合并两个集合：设p[x]是x的集合编号，p[y]是y的集合编号。则合并操作：<code>p[x] = y</code>或<code>p[y] = x</code></li>
+</ol>
+<p><u><strong>核心操作</strong></u></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 寻找x结点的祖宗节点 + 路径优化</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">find</span><span class="params">(<span class="type">int</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (p[x] != x) p[x] = <span class="built_in">find</span>(p[x]);</span><br><span class="line">	<span class="keyword">return</span> p[x];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>食物链</strong><br>不论两个动物之间是不是同一种生物、是不是被吃的关系，都将它们放到一个集合中，即一个树中</p>
+<p>那么如何确定其中两个动物之间的关系呢？记录一下每个点与根节点之间的关系；只要我们知道了每个点与根节点的关系了，就可以知道每两个点之间的关系了</p>
+<p>利用每个点与根节点之间的距离表示其与根节点之间的关系</p>
 <ul>
-<li>用途：</li>
+<li>距离 % 3 &#x3D; 1 表示可以吃根节点</li>
+<li>距离 % 3 &#x3D; 2 表示可以被根节点吃</li>
+<li>距离 % 3 &#x3D; 0 表示与根节点同类</li>
 </ul>
-<ol>
-<li><p>将两个集合合并</p>
-</li>
-<li><p>询问两个元素是否在一个集合中</p>
-</li>
-</ol>
-<p>近乎O(1)的时间复杂度，很快</p>
-<p>基本原理：每个集合用一棵树来表示。树根的编号就是整个集合的编号。每个节点存储它的父节点，即p[x]表示x的父节点。</p>
-<ol>
-<li>判断树根： if（p[x] &#x3D;&#x3D; x）</li>
-<li>求x的集合编号：while（p[x] !&#x3D; x） x &#x3D; p[x];    ———&gt;        优化：路径压缩：一旦找到根节点，就将所有节点都指向根节点</li>
-<li>合并两个集合：设p[x]是x的集合编号，p[y]是y的集合编号。则合并操作：p[x] &#x3D; y或p[y] &#x3D; x</li>
-</ol>
-<p><u>核心操作</u></p>
-<p>寻找x结点的祖宗节点 + 路径优化</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">find</span><span class="params">(<span class="type">int</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (p[x] != x) p[x] = <span class="built_in">find</span>(p[x]);</span><br><span class="line">	<span class="keyword">return</span> p[x];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-
-
+<p>在这道题中，利用并查集维护每个点到根节点的距离  </p>
 <h2 id="7-堆"><a href="#7-堆" class="headerlink" title="7. 堆"></a>7. 堆</h2><p><u>维护一个数据集合</u></p>
 <ul>
 <li>基本操作</li>
@@ -529,32 +579,38 @@
 <li>down(x)（将结点往下调整）</li>
 <li>up(x)（将结点往上调整）</li>
 </ol>
-<h2 id="8-Hash"><a href="#8-Hash" class="headerlink" title="8. Hash"></a>8. Hash</h2><p>离散化是一种特殊的hash          离散化 &#x3D; 排序 + hash</p>
-<p>离散化保证了映射后原数据的顺序保持不变，hash并没有保证；且离散化是nlogn（maybe），hash是O(1)的</p>
-<p>把一堆数据映射到0<del>N的小空间（N&#x3D;10^5</del>10^6）</p>
-<p>将所有的数放在小空间中，解决冲突问题（<strong>冲突问题是指利用hash函数映射后，可能会出现多个数映射到同一个数的情况</strong>）</p>
-<p>利用hash函数进行映射，一般取对10^5取模这个操作作为hash函数 h(x) &#x3D; x mod 10^5，其中10^5取质数，且取距离2的整次幂尽可能远（冲突的概率是最低的）</p>
-<p>根据处理冲突问题的不同的解决方案，分为开放寻址法和拉链法</p>
+<h2 id="8-Hash"><a href="#8-Hash" class="headerlink" title="8. Hash"></a>8. Hash</h2><ul>
+<li><strong>离散化</strong><ul>
+<li>离散化是一种特殊的hash   </li>
+<li>离散化 &#x3D; 排序 + hash</li>
+<li>离散化保证了映射后原数据的顺序保持不变，hash并没有保证</li>
+<li>离散化是nlogn（maybe），hash是O(1)的</li>
+</ul>
+</li>
+</ul>
+<p>把一堆数据映射到$0$<del>$N$的小空间（$N$&#x3D;$10^5$</del>$10^6$）</p>
+<!-- 将所有的数放在小空间中，解决冲突问题 -->
+
+<p><strong>冲突问题是指利用hash函数映射后，可能会出现多个数映射到同一个数的情况</strong></p>
+<p>利用hash函数进行映射，一般取对$10^5$取模这个操作作为hash函数 $h(x) &#x3D; x\mod10^5$，<strong>其中$10^5$取质数，且取距离2的整次幂尽可能远</strong>（冲突的概率是最低的）</p>
+<p>根据处理冲突问题的不同的解决方案，分为<strong>开放寻址法</strong>和<strong>拉链法</strong></p>
 <h3 id="8-1-哈希表的存储结构"><a href="#8-1-哈希表的存储结构" class="headerlink" title="8.1 哈希表的存储结构"></a>8.1 哈希表的存储结构</h3><p>hashmap是拉链法，threadlocal是开放寻址法？？？？</p>
 <p>hash在算法题中一般只有插入和查找这两个操作，没有删除</p>
 <h3 id="8-2-开放寻址法"><a href="#8-2-开放寻址法" class="headerlink" title="8.2 开放寻址法"></a>8.2 开放寻址法</h3><p>开了一个一维数组，数组大小为题目要求大小的2~3倍</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 核心函数</span></span><br><span class="line"><span class="comment">// find函数  如果x在哈希表中已经存在，就返回x所在的位置；如果x在哈希表中不存在，则返回x应该存储的位置</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">find</span><span class="params">(<span class="type">int</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> k = (x % N + N) % N;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 茅厕寻址法：当当前坑位有人且当前坑位中的人不是你要找的人才进入循环</span></span><br><span class="line">    <span class="keyword">while</span> (h[k] != null &amp;&amp; h[k] != x)</span><br><span class="line">    &#123;</span><br><span class="line">        k++;</span><br><span class="line">        <span class="keyword">if</span> (k == N) k = <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> k;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>插入过程</strong> 先找到<code>k=hash(x)</code>，然后从<code>k</code>开始往后找，直到找到第一个空的坑位为止，插进去</p>
+<p><strong>查找过程</strong> 先找到<code>k=hash(x)</code>，从前往后找，先看一下当前位置有没有人，如果<strong>当前位置有人且这个人为x</strong>，那么就找到了<code>x</code>；如果当前位置有人但是这个人不是<code>x</code>，就继续看下一个位置；如果当前位置没有人，则<code>x</code>不存在</p>
+<p><strong>删除过程</strong> 按照查找的方式找<code>x</code>，当找到<code>x</code>后，给他一个标记，代表删除了</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 核心函数</span></span><br><span class="line"><span class="comment">// find函数  如果x在哈希表中已经存在，就返回x所在的位置；如果x在哈希表中不存在，则返回x应该存储的位置</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">find</span><span class="params">(<span class="type">int</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> k = (x % N + N) % N;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 茅厕寻址法：当当前坑位有人且当前坑位中的人不是你要找的人才进入循环</span></span><br><span class="line">    <span class="comment">// null = 0x3f3f3f3f &gt; 1e9</span></span><br><span class="line">    <span class="keyword">while</span> (h[k] != null &amp;&amp; h[k] != x)</span><br><span class="line">    &#123;</span><br><span class="line">        k++;</span><br><span class="line">        <span class="keyword">if</span> (k == N) k = <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> k;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-
-
-
-
-<h3 id="8-3-拉链法"><a href="#8-3-拉链法" class="headerlink" title="8.3 拉链法"></a>8.3 拉链法</h3><p>开一个一维数组（数组大小为“利用hash函数进行映射，一般取对10^5取模这个操作作为hash函数 h(x) &#x3D; x mod 10^5，其中10^5取质数，且取距离2的整次幂尽可能远（冲突的概率是最低的）“这样大小的）来存储所有的hash值，该一维数组每个结点都表示一个表头</p>
-<p>若经过hash映射后，出现了两个相同的映射值，则依次将这两个数插到对应一维数组头节点下面，形成邻接链表。</p>
+<h3 id="8-3-拉链法"><a href="#8-3-拉链法" class="headerlink" title="8.3 拉链法"></a>8.3 拉链法</h3><p>利用邻接链表的结构存储hash的映射值</p>
+<p>开一个一维数组来存储所有的hash值，该一维数组每个结点都表示一个表头</p>
+<blockquote>
+<p>其中数组大小为“利用hash函数进行映射，一般取对$10^5$取模这个操作作为hash函数 $h(x)$&#x3D;$x \mod 10^5$，其中$10^5$取质数，且取距离$2$的整次幂尽可能远（冲突的概率是最低的）“这样大小的）</p>
+</blockquote>
+<p><strong>插入过程</strong> 若经过hash映射后，出现了两个相同的映射值，则依次将这两个数插到对应一维数组头节点下面，形成邻接链表。</p>
+<p><strong>查找过程</strong> 对于要查找的x的映射值，有hash(x)，找到对应的位置，再对该位置的链表进行遍历</p>
+<p><strong>删除过程</strong> 开一个bool数组，把要进行删除的元素打一个标记</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">insert</span><span class="params">(<span class="type">int</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> k = (x % N + N) % N;</span><br><span class="line">    e[idx] = x, ne[idx] = h[k], h[k] = idx++;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">find</span><span class="params">(<span class="type">int</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> k = (x % N + N) % N;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = h[k]; i != <span class="number">-1</span>; i = ne[i])</span><br><span class="line">        <span class="keyword">if</span> (e[i] == x)</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
-
 
 
 
@@ -1050,12 +1106,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">26k</span>
+    <span title="站点总字数">28k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">23 分钟</span>
+    <span title="站点阅读时长">26 分钟</span>
 </div>
 
 <!--
