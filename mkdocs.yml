@@ -1,4 +1,136 @@
 site_name: Sun's NoteBook
-site_url: 
+site_author: Sun
+site_url: 'https://sun-gliang.github.io/'
+
+# repo_name: 'Sun-GLiang/Sun-GLiang.github.io'
+# repo_url: 'https://github.com/Sun-GLiang/Sun-GLiang.github.io'
+
 theme:
   name: material
+  language: zh
+  favicon: _assets/brownCircle.jpg
+  icon:
+    logo: material/pac-man
+    # logo: octicons/paper-airplane-16
+    repo: fontawesome/brands/github-alt
+    admonition:
+      info: fontawesome/solid/anchor
+      note: fontawesome/solid/pen-nib
+      abstract: fontawesome/solid/list
+      tip: fontawesome/solid/lightbulb
+      success: fontawesome/solid/check
+      question: fontawesome/solid/circle-question
+      warning: fontawesome/solid/triangle-exclamation
+      failure: material/alien
+      danger: fontawesome/solid/virus
+      bug: fontawesome/solid/robot
+      example: fontawesome/solid/flask
+      quote: fontawesome/solid/link
+  font:
+    text: LXGW WenKai Screen GB Screen # Share Tech
+    code: JetBrains Mono
+  palette:
+    scheme: default
+    primary: brown
+    accent: deep orange
+  features:
+    - content.code.annotate
+    - content.code.copy
+    # - navigation.instant # This will cause LaTeX render fail at the first try.
+    - navigation.tracking
+    - navigation.tabs
+    # - navigation.tabs.sticky
+    - navigation.indexes
+    - navigation.top
+    - search.highlight
+    - search.share
+    # - navigation.prune
+  custom_dir: overrides
+
+
+plugins:
+  - minify
+  - statistics:
+      words_per_minute: 200
+  - glightbox
+  - search:
+      lang:
+        - zh
+        - en
+      separator: '[\s\-\.]+'
+  - git-revision-date-localized:
+      type: datetime
+      timezone: Asia/Shanghai
+      locale: zh
+      enable_creation_date: true
+      exclude:
+        - index.md
+
+
+markdown_extensions:
+  - toc:
+      permalink: true # link for each title
+      slugify: !!python/object/apply:pymdownx.slugs.slugify {kwds: {case: lower}} # enable Unicode link
+  - admonition
+  - abbr
+  - attr_list
+  - def_list
+  - footnotes
+  - meta
+  - md_in_html
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      # smart_enable: all
+  - pymdownx.caret
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.magiclink:
+      repo_url_shorthand: true
+      user: squidfunk
+      repo: mkdocs-material
+  - pymdownx.mark
+  # - pymdownx.smartsymbols
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+  - mdx_math
+
+
+
+extra_css:
+  - _css/extra.css
+  - _css/flink.css
+  # - https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css
+  # - https://cdn.jsdelivr.net/npm/cn-fontsource-lxgw-wen-kai-gb-screen@1.0.6/font.min.css
+  - https://jsd.cdn.zzko.cn/npm/katex@0.16.4/dist/katex.min.css
+  - https://gcore.jsdelivr.net/npm/lxgw-wenkai-screen-webfont@1.1.0/style.css
+  - https://gcore.jsdelivr.net/npm/lxgw-wenkai-webfont@1.1.0/style.css
+  # - https://cdn.staticfile.org/lxgw-wenkai-screen-webfont/1.6.0/lxgwwenkaiscreen.css
+extra_javascript:
+  - _js/extra.js
+  # - _js/mathjax.js
+  - _js/katex.js
+  # - https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js
+  - https://jsd.cdn.zzko.cn/npm/katex@0.16.4/dist/katex.min.js
+
+nav:
+  - "封面":
+    - "封面": index.md
+  - "技术💻":
+    - "我": About.md 
+  - "阅读📕":
+    - C++: About.md
