@@ -129,14 +129,32 @@ extra_javascript:
 
 nav:
   - "🌐 主页":
-    - "封面 eweemoji": index.md
+    - "封面": index.md
+  
   - "🎯 技术积累":
     - CS-Skills/index.md
     - "LeetCode刷题":
       - CS-Skills/LeetCodeRecord/index.md
+      - "二分":
+        - CS-Skills/LeetCodeRecord/二分/index.md
+    - "Linux命令总结": CS-Skills/tools/Linux/index.md
+    - "算法总结": CS-Skills/tools/Algorithm/index.md
+  
+  - "🚩 项目进展":
+    - Project/index.md
+  
   - "📖 阅读记录":
     - Reading/index.md
+    - " 人生海海": Reading/人生海海/index.md
+
   - "📜 考研专项":
-    - PostExamination/index.md
+    - 考研专项/index.md
+    - "408":
+      - 考研专项/408/index.md
+      - 考研专项/408/计算机组成原理/index.md
+      - 考研专项/408/操作系统/index.md
+      - 考研专项/408/计算机网络/index.md
+      - 考研专项/408/数据结构/index.md
+  
   - "🚀 网站仓库":
     - WebLink/index.md

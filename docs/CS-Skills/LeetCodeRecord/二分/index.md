@@ -2,5 +2,4 @@
 comments: false
 ---
 
-
-# 欢迎！
+# 伊始阶段

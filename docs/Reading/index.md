@@ -1,8 +1,5 @@
 ---
 comments: false
-statistics: True
-hide:
-  - feedback
 ---
 
 
