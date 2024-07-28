@@ -19,6 +19,13 @@ hide:
     </div>
     <br><br> -->
 
+!!! note ""
+    <font size="6" face='KaiTi'>
+        <center>~『人生海海，潮落总会有潮起』~<center>
+    </font>
+
+
+
 
 !!! info "站点统计"
     <center>

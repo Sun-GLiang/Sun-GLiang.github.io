@@ -65,6 +65,12 @@ plugins:
       enable_creation_date: true
       exclude:
         - index.md
+        - CS-Skills/index.md
+        - Project/index.md
+        - Reading/index.md
+        - 考研专项/index.md
+        - WebLink/index.md
+
 
 
 markdown_extensions:
@@ -145,7 +151,8 @@ nav:
   
   - "📖 阅读记录":
     - Reading/index.md
-    - " 人生海海": Reading/人生海海/index.md
+    - "人生海海": Reading/人生海海/index.md
+    - "经验路线": Reading/经验路线/index.md
 
   - "📜 考研专项":
     - 考研专项/index.md
