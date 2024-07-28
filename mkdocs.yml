@@ -128,9 +128,15 @@ extra_javascript:
   - https://jsd.cdn.zzko.cn/npm/katex@0.16.4/dist/katex.min.js
 
 nav:
-  - "封面":
-    - "封面": index.md
-  - "技术💻":
-    - "我": About.md 
-  - "阅读📕":
-    - C++: About.md
+  - "🌐 主页":
+    - "封面 eweemoji": index.md
+  - "🎯 技术积累":
+    - CS-Skills/index.md
+    - "LeetCode刷题":
+      - CS-Skills/LeetCodeRecord/index.md
+  - "📖 阅读记录":
+    - Reading/index.md
+  - "📜 考研专项":
+    - PostExamination/index.md
+  - "🚀 网站仓库":
+    - WebLink/index.md
