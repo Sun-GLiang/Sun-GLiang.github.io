@@ -8,9 +8,10 @@ site_url: 'https://sun-gliang.github.io/'
 theme:
   name: material
   language: zh
-  favicon: _assets/brownCircle.jpg
+  favicon: _assets/brownCircle-removebg-preview.png
   icon:
-    logo: material/pac-man
+    logo: simple/ubisoft
+    # logo: material/pac-man
     # logo: octicons/paper-airplane-16
     repo: fontawesome/brands/github-alt
     admonition:
@@ -63,7 +64,7 @@ plugins:
       timezone: Asia/Shanghai
       locale: zh
       enable_creation_date: true
-      exclude:
+      exclude: # 隐蔽当前页面的创建、修改时间
         - index.md
         - CS-Skills/index.md
         - Project/index.md
@@ -148,10 +149,20 @@ nav:
   
   - "🚩 项目进展":
     - Project/index.md
+    - "类Unix操作系统": 
+      - Project/类Unix操作系统/index.md
+    - "AI贪吃蛇对战平台":
+      - Project/AI贪吃蛇/index.md
   
   - "📖 阅读记录":
     - Reading/index.md
-    - "人生海海": Reading/人生海海/index.md
+    - "文学著作":
+      - Reading/文学著作/index.md
+      - "人生海海": Reading/文学著作/人生海海/index.md
+    - "人文社科":
+      - Reading/人文社科/index.md
+      - Reading/人文社科/福格行为模型/index.md
+      - Reading/人文社科/洞察人性/index.md
     - "经验路线": Reading/经验路线/index.md
 
   - "📜 考研专项":
