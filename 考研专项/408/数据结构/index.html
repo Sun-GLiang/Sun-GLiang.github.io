@@ -503,12 +503,51 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#第5章-树">
+<a class="md-nav__link" href="#线性表">
 <span class="md-ellipsis">
-      第5章 树🌳
+      线性表
     </span>
 </a>
-<nav aria-label="第5章 树🌳" class="md-nav">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#栈队列">
+<span class="md-ellipsis">
+      栈、队列
+    </span>
+</a>
+<nav aria-label="栈、队列" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#中缀表达式转后缀表达式">
+<span class="md-ellipsis">
+      中缀表达式转后缀表达式
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#矩阵存储">
+<span class="md-ellipsis">
+      矩阵存储
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#kmp算法">
+<span class="md-ellipsis">
+      KMP算法
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#树">
+<span class="md-ellipsis">
+      树🌳
+    </span>
+</a>
+<nav aria-label="树🌳" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#二叉树">
@@ -756,12 +795,51 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#第5章-树">
+<a class="md-nav__link" href="#线性表">
 <span class="md-ellipsis">
-      第5章 树🌳
+      线性表
     </span>
 </a>
-<nav aria-label="第5章 树🌳" class="md-nav">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#栈队列">
+<span class="md-ellipsis">
+      栈、队列
+    </span>
+</a>
+<nav aria-label="栈、队列" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#中缀表达式转后缀表达式">
+<span class="md-ellipsis">
+      中缀表达式转后缀表达式
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#矩阵存储">
+<span class="md-ellipsis">
+      矩阵存储
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#kmp算法">
+<span class="md-ellipsis">
+      KMP算法
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#树">
+<span class="md-ellipsis">
+      树🌳
+    </span>
+</a>
+<nav aria-label="树🌳" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#二叉树">
@@ -976,42 +1054,112 @@
 <article class="md-content__inner md-typeset">
 <h1 id="数据结构">数据结构<a class="headerlink" href="#数据结构" title="Permanent link">¶</a></h1>
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"></path></svg></span> 约 5151 个字 <span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3L12.5 13Z"></path></svg></span> 预计阅读时间 26 分钟</p>
+<p><span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"></path></svg></span> 约 6934 个字 <span class="twemoji"><svg viewbox="0 0 640 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3l89.3 89.4-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3z"></path></svg></span> 4 行代码 <span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3L12.5 13Z"></path></svg></span> 预计阅读时间 35 分钟</p>
 </div>
-<h2 id="第5章-树">第5章 树🌳<a class="headerlink" href="#第5章-树" title="Permanent link">¶</a></h2>
+<h2 id="线性表">线性表<a class="headerlink" href="#线性表" title="Permanent link">¶</a></h2>
+<ul>
+<li>数据的逻辑结构独立于其存储结构</li>
+<li>有序表是逻辑结构</li>
+</ul>
+<p><div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="nf">Func</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">n</span><span class="o">==</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">    </span><span class="k">else</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">Func</span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">n</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+该段代码的时间复杂度是<span class="arithmatex">\(O(log_2 n)\)</span>的，因为其递归调用<span class="arithmatex">\(log_2 n\)</span>次，<strong>而每次递归最终执行的都是<code>if (n==1) return 1;</code>，因此可以认为是单层循环，执行1次</strong>。即总的执行次数是<span class="arithmatex">\(T=log_2 n * 1\)</span>，因此时间复杂度是<span class="arithmatex">\(O(log_2 n)\)</span></p>
+<ul>
+<li>线性表的定义要求为：相同数据类型、<strong>有限序列</strong><ul>
+<li>所有整数组成的序列，并不是一个线性表，因为它违反了线性表定义中的<strong>有限序列</strong></li>
+</ul>
+</li>
+<li>线性表并不能方便地运用于各种逻辑结构的存储表示<blockquote>
+<p>如，对于树形结构，顺序表显然不如链表表示起来方便</p>
+</blockquote>
+</li>
+<li>顺序存储方式同样适合存储树和图</li>
+<li>链式存储结构比顺序存储结构能更方便地表示各种逻辑结构</li>
+<li>顺序表是顺序存储的线性表，表中所有元素的类型必须<strong>相同</strong>，<strong>必须连续存放（需要连续的存储空间）</strong>，逻辑上相邻的元素，在物理上也相邻</li>
+<li>顺序存储需要连续的存储空间，在申请时需要申请n+m个连续的存储空间，然后将线性表原来的n个元素复制到新申请的n+m个连续的存储空间的前n个单元</li>
+<li>操作：“交换第3个元素与第4个元素的值”，对于顺序表，只需要进行3次交换操作；而对于链表，需要分别找到两个结点的前驱，在第4个结点断链后再插入到第2个结点后，相比于顺序表，效率较低</li>
+<li>链式存储中，各个不同结点的存储空间可以不连续；但是结点内的存储单元地址必须连续</li>
+<li>队列需要在表头删除元素，表尾插入元素，采用带尾指针的循环链表较为方便，插入和删除的时间复杂度都是O（1）</li>
+<li>线性表有顺序存储和链式存储两种存储方式。线性表中有元素<span class="arithmatex">\(n_0, n_1, ..., n_100\)</span>，则删除元素<span class="arithmatex">\(a_{50}\)</span>需要移动0或50个元素（分别为在链式存储和顺序存储两种方式下）</li>
+<li>给定n个元素的一维数组，建立一个有序单链表的复杂度为<span class="arithmatex">\(O(n^2)\)</span>或<span class="arithmatex">\(O(nlog_2 n)\)</span><ul>
+<li>若先建立链表，然后依次插入建立有序表，则每插入一个元素就需要遍历链表寻找插入位置，即直接插入排序，时间复杂度为<span class="arithmatex">\(O(n^2)\)</span></li>
+<li>若先将数组排好序，然后建立链表，建立链表的时间复杂度为<span class="arithmatex">\(O(n)\)</span>，数组排序的最好时间复杂度是<span class="arithmatex">\(O(nlog_2 n)\)</span></li>
+</ul>
+</li>
+<li>将2个长度为n的循环单链表进行头尾相接的时间复杂度为<span class="arithmatex">\(O(1)\)</span>，由于并未指明哪个链表接在哪个链表之后，所以需要对两个链表都要在<span class="arithmatex">\(O(1)\)</span>的时间内找到头结点和尾结点，因此对这两个循环单链表各设置一个指针时，应该分别指向它们的尾结点</li>
+<li>有一个长度为n的循环单链表，讨论从表中删除首元节点的时间复杂度<ul>
+<li>在循环单链表中，删除首元结点后，<strong>要保持链表的循环性</strong>，因此需要找到首元结点的前驱</li>
+<li>当链表带有头结点时，其前驱就是头结点，因此不论是表头指针还是表尾指针，删除首元结点的时间都是<span class="arithmatex">\(O(1)\)</span></li>
+<li>当链表不带头结点时，其前驱是尾结点。因此<ul>
+<li>若有表尾指针，则可在<span class="arithmatex">\(O(1)\)</span>的时间找到表尾结点；</li>
+<li>若只有表头指针，则需要遍历整个链表找到尾结点；</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>静态链表采用数组表示，需要预先分配较大的存储空间（存储空间是一次性申请的）。静态链表插入、删除不需要移动元素，查找时仍然需要按链依次进行</li>
+</ul>
+<h2 id="栈队列">栈、队列<a class="headerlink" href="#栈队列" title="Permanent link">¶</a></h2>
+<ul>
+<li>上溢是指存储器满，还往里面写；下溢是指存储器空，还往外读</li>
+<li>入队操作是<code>rear = (rear + 1) % M</code>，其中<code>M</code>是队列的长度</li>
+<li>队列长度<code>(rear - front + M) % M</code>，其中<code>M</code>是队列的长度</li>
+<li>每删除或插入一个元素，队头指针和队尾指针加1（% M）</li>
+<li>队空<code>rear = front</code></li>
+<li>队满<code>front = (rear + 1) % M</code></li>
+<li>队列中只有一个元素时，front指向该元素的前一个位置，rear指向该元素</li>
+<li>对于顺序队列，可以通过队头指针和队尾指针计算队列中的元素个数；而链式队列则不能</li>
+<li>队列采用链式存储时，删除元素从表头删除，通常仅需修改头指针；但是若队列中仅有一个元素，则尾指针也需要被修改，当仅有一个元素时，删除后队列为空，需要修改尾指针为<code>rear = front</code></li>
+<li>FIFO页面替换算法用到了队列</li>
+<li>执行函数时，系统会为调用者构造一个由参数表和返回地址组成的活动记录，并将记录压入系统提供的栈中，若被调用函数有局部变量，也要压入栈中</li>
+<li>通常使用栈来处理函数或过程调用</li>
+</ul>
+<h3 id="中缀表达式转后缀表达式">中缀表达式转后缀表达式<a class="headerlink" href="#中缀表达式转后缀表达式" title="Permanent link">¶</a></h3>
+<p><strong>手算</strong>
+<a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="imgs/0.jpg"><img alt="" src="imgs/0.jpg"/></a></p>
+<p><strong>程序</strong>
+遇到操作数时直接输出</p>
+<p>扫描到操作符时，有下列规则：
+- 遇到<code>(</code>，则直接入栈
+- 遇到<code>)</code>，则不入栈，且依次弹出栈顶运算符，直到遇到<code>(</code>为止，并删除<code>(</code>
+- 若当前运算符的优先级高于栈顶运算符或者遇到栈顶为<code>(</code>，则直接入栈
+- 若当前运算符的优先级低于或等于栈顶运算符，则依次弹出，直到遇到一个优先级高于它的运算符或者遇到<code>(</code>为止，之后将运算符入栈</p>
+<p><strong>利用栈求表达式值</strong>
+设立运算数栈、运算符栈
+..........</p>
+<h3 id="矩阵存储">矩阵存储<a class="headerlink" href="#矩阵存储" title="Permanent link">¶</a></h3>
+<ul>
+<li>注意存储的矩阵的下标的起始</li>
+<li>行优先 还是 列优先</li>
+<li><strong>注意三对角矩阵中对角线元素的位置</strong></li>
+<li>稀疏矩阵采用三元组来压缩存储，存储矩阵元素的行列下标和相应的值。不能够再根据矩阵元素的行列下标快速定位矩阵元素的，失去了随机存取的特性</li>
+<li>用三元组表存储结构存储稀疏矩阵M时，每个非零元素都由三元组（行标、列标、关键字值）组成。但是仅通过三元组表中的元素无法判断稀疏矩阵M的大小，还要保存M的行数和列数。此外，还可以保存矩阵非零元素的个数</li>
+<li>稀疏矩阵中<strong>非零元素的值</strong>较少</li>
+</ul>
+<h2 id="kmp算法">KMP算法<a class="headerlink" href="#kmp算法" title="Permanent link">¶</a></h2>
+<h2 id="树">树🌳<a class="headerlink" href="#树" title="Permanent link">¶</a></h2>
 <h3 id="二叉树">二叉树<a class="headerlink" href="#二叉树" title="Permanent link">¶</a></h3>
 <p><strong>二叉树和度为2的树</strong></p>
 <ul>
-<li>
-<p>度为2的树至少有3个结点，而二叉树可以为空</p>
-</li>
-<li>
-<p>度为2的有序树的孩子的左右次序是相对于另一个孩子而言，若只有一个孩子，则无需区分左右；而二叉树，无论有一个还是两个孩子，都需要区分左右</p>
-</li>
+<li>树的度为2，表示存在结点正好有2个孩子</li>
+<li>度为2的树至少有3个结点，而二叉树可以为空</li>
+<li>度为2的有序树的孩子的左右次序是相对于另一个孩子而言，若只有一个孩子，则无需区分左右；而二叉树，无论有一个还是两个孩子，都需要区分左右
+<a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="imgs/1.jpg"><img alt="" src="imgs/1.jpg"/></a></li>
 </ul>
 <p><strong>性质</strong></p>
 <ul>
-<li>
-<p>非空二叉树叶结点数等于度为2的结点数加1，即<span class="arithmatex">\(n_0=n_2+1\)</span></p>
-</li>
-<li>
-<p>对于完全二叉树，结点i所在的深度为<span class="arithmatex">\(\lfloor log_2 i \rfloor + 1\)</span></p>
-</li>
-<li>
-<p>具有n个结点的完全二叉树的高度为<span class="arithmatex">\(\lceil log_2 (n+1) \rceil\)</span> 或 <span class="arithmatex">\(\lfloor log_2 n \rfloor + 1\)</span></p>
-</li>
-<li>
-<p>在含有n个结点的二叉链表中，含有n+1个空链域（与线索链表有关）</p>
-</li>
+<li>非空二叉树叶结点数等于度为2的结点数加1，即<span class="arithmatex">\(n_0=n_2+1\)</span></li>
+<li>对于完全二叉树，结点i所在的深度为<span class="arithmatex">\(\lfloor log_2 i \rfloor + 1\)</span></li>
+<li>具有n个结点的完全二叉树的高度为<span class="arithmatex">\(\lceil log_2 (n+1) \rceil\)</span> 或 <span class="arithmatex">\(\lfloor log_2 n \rfloor + 1\)</span></li>
+<li>在含有n个结点的二叉链表中，含有n+1个空链域（与线索链表有关）</li>
 </ul>
 <h3 id="二叉树的遍历">二叉树的遍历<a class="headerlink" href="#二叉树的遍历" title="Permanent link">¶</a></h3>
 <ul>
-<li>
-<p>中序遍历 + 其他三种遍历中任何一个 -&gt;  可以唯一确定一颗二叉树</p>
-</li>
-<li>
-<p>而其他三种遍历任意组合，却无法唯一确定一颗二叉树</p>
-</li>
+<li>中序遍历 + 其他三种遍历中任何一个 -&gt;  可以唯一确定一颗二叉树</li>
+<li>而其他三种遍历任意组合，却无法唯一确定一颗二叉树</li>
 </ul>
 <p><strong>后序遍历</strong></p>
 <p>后序遍历访问一个结点P时，从栈底到栈顶，再加上P结点，刚好构成了从根节点到P结点的一条<strong>路径</strong></p>
@@ -1716,7 +1864,7 @@
 <span class="md-icon" title="最后更新">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"></path></svg>
 </span>
-<span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年8月12日 18:19:52</span>
+<span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年8月26日 16:22:45</span>
 </span>
 <span class="md-source-file__fact">
 <span class="md-icon" title="创建日期">
