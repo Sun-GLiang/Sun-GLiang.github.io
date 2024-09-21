@@ -686,33 +686,85 @@
 <article class="md-content__inner md-typeset">
 <h1 id="计算机组成原理">计算机组成原理<a class="headerlink" href="#计算机组成原理" title="Permanent link">¶</a></h1>
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"></path></svg></span> 约 6662 个字 <span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3L12.5 13Z"></path></svg></span> 预计阅读时间 33 分钟</p>
+<p><span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"></path></svg></span> 约 9127 个字 <span class="twemoji"><svg viewbox="0 0 640 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3l89.3 89.4-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3z"></path></svg></span> 4 行代码 <span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3L12.5 13Z"></path></svg></span> 预计阅读时间 46 分钟</p>
 </div>
 <ul>
 <li>明确主存的编址方式：按字节、按半字、还是按字</li>
 </ul>
 <h2 id="第2章-机器数浮点数">第2章 机器数、浮点数<a class="headerlink" href="#第2章-机器数浮点数" title="Permanent link">¶</a></h2>
-<p><strong>计算机标志位</strong></p>
 <ul>
-<li>
-<p>无符号数A与B做差</p>
-<ul>
-<li>ZF = 1时，说明A = B</li>
-<li>ZF = 0 &amp; CF=0，A &gt; B</li>
-<li>CF = 1时，A &lt; B
-<a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="imgs/0.png"><img alt="alt text" src="imgs/0.png"/></a></li>
+<li>二进制小数只能表示<span class="arithmatex">\(1/2、1/4、1/8、...、1/2^n\)</span>，因此无法表示所有的十进制小数</li>
+<li>[x]移表示以移码进行表示。对于由6个1、2个0组成的二进制整数，采用移码进行表示。当偏置值为128时，要使得数值最大，就有<span class="arithmatex">\(1111 1100B - 1000 0000B = 252 - 128 = 124\)</span>；当偏置值为127时，要使得数值最小，就有<span class="arithmatex">\(0011 1111B - 0111 1111B = 1100 0000B = -64\)</span></li>
+<li>模4补码具有模2补码的全部优点且更容易检查加减运算中的溢出问题。存储模4补码仅需要一个符号位，因为任何一个正确的数值，模4补码的两个符号位总是相同的。只在把两个模4补码的数送往ALU完成加减运算时，才把每个数的符号位的值同时送到ALU的双符号位中，即只在ALU中采用双符号位</li>
+<li>补码左移时，若移出的高位不同于移位后的符号位，即左移前后的符号位不同，则发生溢出。</li>
+<li>原码的一位乘法中，符号位与数值位是分开进行运算的（符号位不参与运算，单独处理）。运算结果的数值部分是乘数与被乘数数值位的乘积，符号是乘数与被乘数的符号位的异或</li>
+<li>对于左移，逻辑左移和算数左移的结果都一样，高位移出，低位补0</li>
+<li>逻辑移位不考虑符号位的问题，逻辑左移时，若最高位移出的是1，表示发生溢出</li>
+<li>算术左移时，若移出的最高位不同于移位后的符号位，即左移前后的符号位不同，表示发生溢出</li>
+<li>长度相同、格式相同的两种浮点数，前者基数大、尾数短，后者阶码短、尾数长，其他规定均相同。则前者可表示的数的范围大但是精度低<ul>
+<li>基数越大，阶码每变化一位，尾数小数点需要移动的位数就越多，表示的数的绝对值就越大，范围就越大</li>
+<li>浮点数总位数不变的情况下，能表示的不同状态的个数是一定的。若范围增大，则意味着浮点数的离散程度增大，相邻两个浮点数之间的间隔就越大，精度就越低</li>
 </ul>
 </li>
-<li>
-<p>有符号数A与B做差</p>
-<ul>
-<li>OF = SF &amp; ZF = 0，说明A &gt; B</li>
-<li>OF ≠ SF &amp; ZF = 0，说明A &lt; B</li>
-<li>ZF = OF = 0 &amp; SF = 1，说明A &lt; B
-<a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="imgs/1.png"><img alt="alt text" src="imgs/1.png"/></a></li>
+<li>变形补码，即用两个二进制位来表示数字的符号位，其余与补码相同</li>
+<li>定点运算中，运算结果超出数的表示范围后，就发生溢出；浮点运算中，运算结果超出尾数的表示范围却不一定溢出，只有规格化后阶码超出所能表示的范围后，才发生溢出</li>
+<li>规格化浮点数：尾数的最高数值位必须是一个有效值。目的在于增加数据的表示精度<ul>
+<li>补码表示的尾数规格化：尾数的最高数值（即小数点后的第一位）位必须与尾数的符号位（即整数部分）相反<blockquote>
+<p>1.0xxx或0.1xxx才是规格化的</p>
+</blockquote>
+</li>
+<li>源码表示的尾数规格化：尾数的最高数值位（即小数点后的第一位）必须是1<blockquote>
+<p>对于正数，0.1xxx；对于负数，1.1xxx才是规格化的</p>
+</blockquote>
+</li>
+<li>若基数为4，尾数用原码表示，则其规格化数的形式是<strong>小数点的后两位不全为0</strong></li>
 </ul>
 </li>
+<li>对阶，是较小的阶码调整到较大的阶码。只存在尾数右移的情况（阶码增大）</li>
+<li>阶码的取值<ul>
+<li>8位阶码是1~127</li>
+<li>11位是1~2046</li>
 </ul>
+</li>
+<li>正数的源码、反码、补码都相同</li>
+<li>浮点数运算是否溢出：取决于阶码是否上溢</li>
+<li>阶码下溢可以通过非规格化数来表示</li>
+<li>尾数上溢或下溢，可以通过左移或右移进行调整</li>
+<li>IEEE754中，<strong>阶码全为0，尾数不全为0表示非规格化数</strong>，其值为<span class="arithmatex">\(2^{-126} * 0.f\)</span>（其中f表示尾数部分（小数点后面））。非规格化数用于处理阶码下溢，使得出现比最小规格化数还小的数时，程序也可以继续运行下去</li>
+<li>在位数相同的情况下，移码和补码的表示范围是相同的。因此若将阶码部分的移码表示改为补码表示，则浮点数的表示范围<strong>不变</strong></li>
+<li>IEEE754省去尾数部分的整数1；而其他的浮点数格式中，尾数部分的整数部分为0（若规格化，则尾数为0.1xxx）</li>
+<li>舍入是浮点数的概念，定点数没有舍入的概念</li>
+<li>浮点数的舍入有两种情况：对阶、右规格化；浮点数舍入不一定产生误差（如向下舍入11.00到11.0时没有误差）</li>
+<li>结构体按边界对齐存放的要求：数据成员的起始地址是其数据类型大小的整数倍</li>
+<li>大端方式：内存的低地址存放高位字节</li>
+<li>IEEE754尾数部分有效位为24为，可以精确表示24位的int<ul>
+<li>即将int型变量转成二进制，写成真值为<span class="arithmatex">\(±1.xxx*2^n\)</span>，若小数点后的位数超过23位，则转换成float后会有精度损失</li>
+</ul>
+</li>
+<li>右规和尾数舍入可能引起阶码下溢</li>
+</ul>
+<p>对于下列程序
+<div class="highlight"><pre><span></span><code><span class="c1">// x, y, z都是int型</span>
+<span class="kt">double</span><span class="w"> </span><span class="n">dx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">double</span><span class="p">)</span><span class="n">x</span><span class="p">;</span>
+<span class="kt">double</span><span class="w"> </span><span class="n">dy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">double</span><span class="p">)</span><span class="n">y</span><span class="p">;</span>
+<span class="kt">double</span><span class="w"> </span><span class="n">dz</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">double</span><span class="p">)</span><span class="n">z</span><span class="p">;</span>
+</code></pre></div>
+1. <code>dx + dy == (double)(x + y)</code>并非永真。<code>x + y</code>可能会溢出，而<code>dx + dy</code>不会溢出
+2. <code>dx * dx &gt;= 0</code>永真。double型采用IEEE754，尾数采用原码小数，符号和数值部分分开计算，不管结果是否溢出，都不会影响乘积的符号
+3. <code>dx / dx == dy / dy</code>并非永真。若dx或dy为0，则不成立
+4. <code>(dx + dy) + dz == dx + (dy + dz)</code>永真。dx、dy、dz都是由int转换为double的，double可以精确的表示int</p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="imgs/11.jpg"><img alt="" src="imgs/11.jpg"/></a> <a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="imgs/12.jpg"><img alt="" src="imgs/12.jpg"/></a></p>
+<p><strong>计算机标志位</strong>
+- 无符号数A与B做差
+    - ZF = 1时，说明A = B
+    - ZF = 0 &amp; CF=0，A &gt; B
+    - CF = 1时，A &lt; B
+    <a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="imgs/0.png"><img alt="alt text" src="imgs/0.png"/></a>
+- 有符号数A与B做差
+    - OF = SF &amp; ZF = 0，说明A &gt; B
+    - OF ≠ SF &amp; ZF = 0，说明A &lt; B
+    - ZF = OF = 0 &amp; SF = 1，说明A &lt; B
+    <a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="imgs/1.png"><img alt="alt text" src="imgs/1.png"/></a></p>
 <p><strong>定点乘法运算</strong></p>
 <ul>
 <li>乘积的符号位由两个乘数的符号位异或得到</li>
@@ -1176,13 +1228,34 @@
 </li>
 <li>IF：取指令；ID：译码、取操作数；EX：运算；M：访存；WB：写回</li>
 <li>若两条指令之间存在数据相关，且没有旁路技术，则下一条指令必须在上一条指令的WB段后才能开始ID段（译码/取数）</li>
-<li></li>
-<li>转移指令<ul>
+<li>
+<p>转移指令</p>
+<ul>
 <li><strong>直接转移指令</strong>在EX段确定转移的目标地址（好像也在EX段直接更新了PC的值，确定了下一条指令的地址），会发生控制冒险；目标地址直接包含在指令中，或可以直接在EX段计算出来</li>
 <li>流水段个数越多，意味着在转移结果确定前，可能取出更多的错误指令，从而需要更多的时间和资源来处理错误指令</li>
 <li><strong>条件转移指令</strong>在EX段设置条件码，在MEM段控制是否将转移地址送到PC（需要等待条件判断的结果，同时给处理器更多时间来处理分支预测），这之后才开始根据PC内容取指令。因此条件转移指令的下一条指令取指令阶段IF必须与条件转移指令的WB段对齐</li>
 </ul>
 </li>
+<li>
+<p>单处理器属于SISD，多处理器属于MIMD</p>
+</li>
+<li>阵列处理器有一个计算阵列，由多个处理单元组成，使用单一的控制部件控制多个处理单元，使每个处理单元对各自的数据进行同一的操作，属于SIMD结构</li>
+<li>属于SIMD结构（由一个指令控制部件、多个处理单元组成）的有：并行处理机、阵列处理机、向量处理机</li>
+<li>标量流水线处理机属于SISD结构</li>
+<li>超线程技术：在一个CPU中，提供两套线程处理单元，让单个处理器实现线程级并行<a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="imgs/7.jpg"><img alt="" src="imgs/7.jpg"/></a><ul>
+<li>超线程技术在CPU内部仅复制必要的线程资源，共享CPU的高速缓存和功能部件，让两个线程可以并行执行，模拟双核CPU</li>
+<li>超线程技术不可以让4核处理器变成8核</li>
+</ul>
+</li>
+<li>时间并行是指流水线技术；空间并行是指硬件资源的重复</li>
+<li>多核CPU的核心是对称的，因此2.4GHZ双核CPU中两个核的主频也是2.4GHZ</li>
+<li>多核CPU共有一组内存，数据共享。各个核心既可以有独自的Cache、又可以共享同一个Cache</li>
+<li>在多核CPU上运行一个不支持多线程的程序，显然不能发挥多核CPU的优势</li>
+<li>只有支持多线程的并行处理程序才能同时在多个核心上运行，发挥多核的优势</li>
+<li>SMP（共享内存多处理器）为对称多处理器，一般采用偶数路，具有共享的单一物理地址空间，所有的核都可以通过存取指令来访问同一片主存地址空间<a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="imgs/8.jpg"><img alt="" src="imgs/8.jpg"/></a></li>
+<li>多核处理器实际上就是在一个CPU上集成了多个执行内核</li>
+<li>MIMD结构分为多计算机系统和多处理器系统</li>
+<li>向量处理器是SIMD的变体</li>
 </ul>
 <p><strong>硬件多线程</strong></p>
 <p>硬件多线程为每个线程提供了单独的通用寄存器组、单独的PC，进程切换只需要选中寄存器、PC</p>
@@ -1197,15 +1270,142 @@
 <p>同时多线程：一个时钟周期中可以执行多个不同线程的多条指令 <code>线程级并行</code></p>
 </li>
 </ol>
-<hr/>
 <h2 id="第6章-总线">第6章 总线<a class="headerlink" href="#第6章-总线" title="Permanent link">¶</a></h2>
+<ul>
+<li>总线结构便于增减外设，同时减少了信息传输线的条数</li>
+<li><strong>地址总线</strong>是用于CPU选择主存单元地址和I/O端口地址的<strong>单向总线</strong>，不能回传</li>
+<li>控制信息和状态信息是单向传输，它们的传输方向是相反的。控制信息通过控制总线由CPU发送至内存或外设，状态信息则通过状态总线由内存或外设发送至CPU<ul>
+<li>握手信号属于总线定时的控制信号，应在控制总线上传输</li>
+</ul>
+</li>
+<li>数据总线是双向的，CPU既可以从主存或外设读数据，也可以发送数据<ul>
+<li>传输指令、操作数、中断类型号（指出中断向量（中断服务程序的入口地址）的地址，CPU响应某外部中断后，会从数据总线上获取该中断源的中断类型号，据此计算对应中断向量在中断向量表（存放在内存）的位置）</li>
+</ul>
+</li>
+<li>控制总线传输控制信息，包括控制命令、反馈信号、定时信号、各种请求/回答信号、响应信号</li>
+<li>串行传输：数据的传输按位进行；并行传输：所有数据位同时传输<ul>
+<li>USB是串行总线</li>
+</ul>
+</li>
+<li>地址和数据在不同的总线上传输，根据总线传输信息的内容进行区分，地址在地址总线上传输，数据在数据总线上传输</li>
+<li>图像的分辨率为<code>n*m</code>像素，则其占用的空间为<code>n*m</code>位；像素的颜色数量为<code>M</code>个，则其占用的位数为<span class="arithmatex">\(n=log_2 M\)</span>；图像的颜色深度为<code>n</code>位，则其所占位数位<code>n</code></li>
+</ul>
+<p><strong>同步、异步传输</strong></p>
+<ul>
+<li>不同速度的设备之间传送数据，即可采用同步（但是不能发挥快速设备的高速性能）、又可采用异步方式（主要用于在不同的设备间进行通信）</li>
+<li>同步控制指由统一的时序控制的通信方式。同步通信采用公共时钟，有统一的时钟周期。同步控制即可用于CPU控制、又可用于高速的外部设备控制</li>
+<li>异步通信中，没有时钟控制信号，完全靠双方相互制约的握手信号来实现定时控制（一次握手过程完成多位数据交换），按需分配时间。适用于<strong>速度差异大的设备间通信</strong></li>
+<li>总线的传输周期分为寻址阶段、申请分配阶段、传输阶段</li>
+<li>分离事务通信是总线复用（一种信号线在不同的时间传输不同的信息）的一种，相比单一的传输线路可以提高总线的利用率</li>
+<li>PCI-Expressx16采用串行数据包传输数据</li>
+<li>一次总线事务不一定在一个时钟周期内完成，即时钟频率不一定等于工作频率</li>
+<li>若无突发传输，每次传输需要经过传输地址、准备数据、传输数据三个过程</li>
+<li>突发传输：一个总线周期中，可以传输多个存储地址连续的数据，即一次传输一个地址和一批地址连续的数据</li>
+</ul>
 <h2 id="第7章-io">第7章 I/O<a class="headerlink" href="#第7章-io" title="Permanent link">¶</a></h2>
+<ul>
+<li>I/O设备通过<em>设备控制器</em>来与主板的系统总线相连</li>
+<li>图像的分辨率为<code>n*m</code>像素，则其占用的空间为<code>n*m</code>位；像素的颜色数量为<code>M</code>个，则其占用的位数为<span class="arithmatex">\(n=log_2 M\)</span>；图像的颜色深度为<code>n</code>位，则其所占位数位<code>n</code></li>
+<li>在统一编址的方式下，没有专门的I/O（输入输出）指令，用访存指令来实现I/O操作，区分存储单元和I/O设备是靠<strong>指令中它们各自不同的地址码</strong></li>
+<li>在独立编址下，存储单元和I/O设备是靠不同的指令来区分的，使用专门的I/O指令来访问访问I/O端口。I/O指令的格式与通用指令的格式不同</li>
+<li>I/O接口功能<ul>
+<li>数据格式转换</li>
+<li>I/O过程中错误与状态检测</li>
+<li>I/O操作的控制与定时</li>
+<li>与主机和外设通信</li>
+</ul>
+</li>
+<li>按照不同的数据传送格式，可将接口分为并行接口和串行接口</li>
+<li>I/O接口中的寄存器主要有数据缓冲寄存器、命令/状态寄存器（前两者的内容都通过数据总线来传送的）、控制寄存器</li>
+<li>磁盘驱动器向盘片刺刀记录数据时，采用串行方式写入</li>
+<li>逻辑地址是供编程使用的、不唯一；物理地址是外部连接使用的、唯一，与地址总线相对应</li>
+<li>采用中断方式进行打印控制时 <a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="imgs/9.jpg"><img alt="" src="imgs/9.jpg"/></a> 在打印控制接口与打印机之间交换的信息有打印字符点阵信息、打印控制信息、打印机状态信息</li>
+<li>中断请求信号是设备控制器通过中断控制器发送给CPU的</li>
+<li>CPU和主存-I/O总线-I/O接口-通信总线（电缆）-外设<blockquote>
+<p>I/O总线的数据宽度与通信总线的数据宽度不一定相同</p>
+</blockquote>
+</li>
+<li>I/O接口是类似于网卡、显卡的一种外设控制逻辑</li>
+<li>CPU从I/O接口读取状态信息；CPU向I/O接口传送用来对设备进行控制的命令</li>
+<li>地址线用以传送与CPU交换数据的端口地址</li>
+<li>控制线用于给I/O端口发送读/写命令，仅用于对端口进行读/写控制</li>
+<li>中断类型号用于指出中断向量的地址。CPU响应某一外部中断后，就从数据总线上获取该中断源的中断类型号，然后据此计算对应中断向量在中断向量表（存放在内存）的位置</li>
+<li>在执行一条指令时，CPU使用地址总线选择所请求的I/O端口，使用数据总线在CPU寄存器和端口之间传输数据</li>
+<li>磁盘驱动器即磁盘本身</li>
+</ul>
+<p><strong>中断、DMA</strong> <font color="red">【重点】</font></p>
+<ul>
+<li><strong>中断排队</strong>判优逻辑：使同时提出的请求中的优先级别最高者得到及时<strong>响应</strong><ul>
+<li>排队的规则由软件通过对中断屏蔽寄存器进行设置来确定</li>
+</ul>
+</li>
+<li>中断向量是中断服务程序的入口地址；中断向量地址是内存中存放中断向量的地址，即中断服务程序入口地址的地址</li>
+<li>DMA方式不需要CPU干预传送操作，仅在开始和结尾借用CPU一点时间，其余不占用CPU任何资源。因此一个完整的DMA过程，主要由DMA控制器控制，但也需要CPU参与控制，只是CPU干预比较少，只需要在数据传输开始和结束时干预<ul>
+<li>DMA不需要中断现行程序，CPU仅作一些辅助性工作，因为主存和DMA之间有一条数据通路，所以无需使用CPU内部寄存器，<strong>也就无需保护现场</strong></li>
+<li>DMA方式传送数据的过程中，因为没有破坏PC和寄存器的值，所以CPU可以正常工作</li>
+<li>DMA中断，是为了报告CPU数据的传输结束</li>
+<li>DMA方式每次申请的是总线的使用权，传送的数据是从设备直接送入内存的（或相反）</li>
+<li>DMA方式只是在后处理阶段需要用中断方式请求CPU做结束处理，但在整个数据传输过程中，并不需要中断请求；DMA方式的中断请求是在DMA传送结束时后请求CPU做DMA结束处理</li>
+<li>磁盘存储器进行读/写操作前，CPU需要对磁盘控制器或DMA控制器进行初始化，包含在初始化信息中的是（数据是直接通过DMA控制器进行数据传输的，与CPU无关）<ul>
+<li>传送信息所在的主存起始地址</li>
+<li>传送方向（读磁盘还是写磁盘）</li>
+<li>传送数据的字数或字节数</li>
+</ul>
+</li>
+<li>DMA方式下，数据从内存传送到外设经过的路径是：内存-数据总线-DMA-外设
+    &gt; DMA方式的数据传送不经过CPU，但需要经过DMA控制器中的数据缓冲寄存器。输入时，数据由外设（磁盘）先送往DMA的数据缓冲寄存器，再通过数据总线送到主存。反之，输出时，数据由主存通过数据总线送到DMA的数据缓冲寄存器，然后送到外设</li>
+<li>DMA方式中，<strong>由外部设备向DMA控制器发出DMA请求信号</strong>，然后由<strong>DMA控制器向CPU发出总线请求信号</strong></li>
+<li>DMA在与主存交互数据时通过周期窃取方式，窃取的是<strong>存取周期</strong>；周期窃取中，CPU对DMA的响应可以在指令执行过程中的任何两个存取周期之间；</li>
+<li>周期挪用是单字传输的，采用周期挪用进行DMA数据传送时，每传送一个数据要占用1个<strong>存取周期</strong> <a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="imgs/10.jpg"><img alt="" src="imgs/10.jpg"/></a></li>
+<li>CPU在每个存储周期（总线周期）结束后检查是否有DMA请求</li>
+<li>只有具有DMA接口的设备才能产生DMA请求</li>
+<li>总线周期、机器周期、存取周期、流水段长度是等价的</li>
+<li>只要CPU不占用总线，DMA请求的响应时间可以发生在每个机器周期结束时</li>
+<li>每个机器周期结束后，CPU就可以响应DMA请求</li>
+<li>CPU与外设并行工作，传送与主程序并行工作</li>
+<li>DMA方式只能用于数据传输，不具备对异常事件的处理能力，不能中断现行程序</li>
+<li>中断优先级：DMA&gt;不可屏蔽中断&gt;内部异常&gt;可屏蔽中断，其中前3个是不可屏蔽的，即使关中断也可以响应</li>
+</ul>
+</li>
+<li>程序中断需要中断现行程序，因此需要保护现场，以便中断执行完后还能回到原来的点去继续没有完成的工作<ul>
+<li>不适合高速设备</li>
+<li>程序中断，是为了传送数据</li>
+<li>CPU与外设并行工作，传送与主程序串行工作</li>
+<li>程序中断方式在数据传输时，首先发出中断请求，此时CPU中断正在进行的操作，转而进行数据传输，直到数据传输结束，CPU才返回中断前执行的操作；程序中断方式的中断请求是为了进行数据传送</li>
+<li>中断服务程序的最后一条指令是中断返回指令。与无条件转移指令不同的是，它不仅要修改PC值，而且要将CPU中的所有寄存器都恢复到中断前的状态</li>
+<li>CPU执行中断服务程序时会执行相应的I/O指令，实现CPU的通用寄存器和外设接口中的寄存器之间的直接数据交换</li>
+<li>中断请求的是CPU时间，要求CPU执行程序来处理发生的相关事件。在I/O设备输入每个数据的过程中，无需CPU的干预。传输完数据后，才需要CPU进行中断处理</li>
+<li>在中断响应周期中，由<em>中断隐指令</em>将允许中断触发器置0。在恢复现场和屏蔽字的时候也需要关中断，此时是由<em>关中断指令</em>来完成的 </li>
+<li>中断响应周期中，采用硬件方法保护并更新PC内容，而不由软件完成，可以避免因为软件保护和恢复PC内容而造成的时间开销和错误风险，提高中断处理的效率和正确性</li>
+</ul>
+</li>
+<li>程序查询方式<ul>
+<li>按启动查询方式的不同，查询程序分为定时查询方式和独占查询</li>
+<li>在程序查询中，CPU只负责数据传输</li>
+<li>每完成一次数据传送后，会修改主存地址和计数值（主存地址+1，计数值-1）</li>
+<li></li>
+</ul>
+</li>
+<li>用户程序需要输入输出时，需要调用操作系统提供的接口（请求操作系统服务），进行访管中断，系统由用户态变为核心态</li>
+<li>CPU无法对发生的中断请求立即进行处理，因此需要在I/O接口中设置中断触发器，以保存是哪些外设发出了中断请求，等CPU当前的指令周期结束后，响应中断并进行处理</li>
+<li>中断优先级包括：响应优先级、处理优先级<ul>
+<li>中断屏蔽标志改变<strong>处理优先级</strong>，反应了多个中断服务程序执行完的次序。方便改动，可以利用屏蔽字技术来动态调整。中断屏蔽字：1越多，优先级越高</li>
+<li>中断响应优先级是由中断查询<strong>程序</strong>或中断判优<strong>电路</strong>决定的（不便于改动），反应的是多个中断同时请求时哪个先被响应，即<strong>中断服务程序开始执行的顺序</strong></li>
+<li>多重中断系统中，中断处理优先级决定了本中断是否能打断正在执行的中断服务程序，决定了多个中断服务程序执行完的次序</li>
+</ul>
+</li>
+<li><strong>DMA方式是靠纯硬件实现的</strong>；3种基本的程序控制方式即程序查询方式、程序中断、<strong>通道控制</strong>都需要程序的干预</li>
+<li>数据通路在CPU中</li>
+<li>外部中断是指来自CPU与内存以外的中断</li>
+<li>多重中断在保护被中断进程现场时关中断，执行中断处理程序时开中断</li>
+<li></li>
+</ul>
 <aside class="md-source-file">
 <span class="md-source-file__fact">
 <span class="md-icon" title="最后更新">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"></path></svg>
 </span>
-<span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年8月12日 18:19:52</span>
+<span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年8月26日 16:22:45</span>
 </span>
 <span class="md-source-file__fact">
 <span class="md-icon" title="创建日期">
